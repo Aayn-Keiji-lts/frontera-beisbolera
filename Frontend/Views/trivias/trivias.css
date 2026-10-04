@@ -1,0 +1,329 @@
+:root {
+  --bg-dark: #020d24;
+  --nav-bg: #03153b;
+  --banner-blue: #09378c;
+  --side-cream: #ece5d8;
+  --card-bg: #f5f4f0;
+  --text-main: #141c2b;
+  --text-muted: #5e6d82;
+  --accent-blue: #155bd5;
+  --accent-blue-hover: #1c68ec;
+  --border-subtle: #d6d3cb;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-soft: 0 12px 32px rgba(2, 13, 36, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 90px;
+  background-color: #031842;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #e8e2d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.logo-circle:hover {
+  transform: scale(1.03);
+}
+
+.logo-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 110px;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #a8c4f0;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background-color: rgba(21, 91, 213, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-profile {
+  background-color: var(--accent-blue);
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.btn-profile:hover {
+  background-color: var(--accent-blue-hover);
+}
+
+.logout-btn {
+  color: #a8c4f0;
+  font-size: 1.15rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  color: #ff6b6b;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.page-container {
+  flex: 1;
+  background-color: var(--side-cream);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.central-banner {
+  width: 76%;
+  max-width: 1100px;
+  background: linear-gradient(180deg, #09378c 0%, #062b70 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.trivia-card {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 540px;
+  padding: 34px 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-subtle);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-header {
+  margin-bottom: 22px;
+}
+
+.trivia-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge-category {
+  background-color: rgba(9, 55, 140, 0.1);
+  color: var(--banner-blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trivia-progress {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.trivia-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.45;
+  letter-spacing: -0.2px;
+}
+
+.options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.option-card {
+  cursor: pointer;
+  display: block;
+}
+
+.option-card input {
+  display: none;
+}
+
+.option-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.option-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #f0eee9;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.option-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.option-card:hover .option-content {
+  border-color: var(--accent-blue);
+  background-color: #fafcff;
+}
+
+.option-card input:checked + .option-content {
+  border-color: var(--accent-blue);
+  background-color: #eef4ff;
+}
+
+.option-card input:checked + .option-content .option-indicator {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-card {
+  flex: 1;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-confirm {
+  background-color: var(--nav-bg);
+  color: #ffffff;
+  border: 1px solid var(--nav-bg);
+}
+
+.btn-confirm:hover {
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(21, 91, 213, 0.25);
+}
+
+.btn-cancel {
+  background-color: #ffffff;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border-subtle);
+  max-width: 100px;
+}
+
+.btn-cancel:hover {
+  background-color: #f0eee9;
+  color: var(--text-main);
+}
+
+
+.footer-bar {
+  height: 45px;
+  background-color: var(--bg-dark);
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none; /* En móvil se puede sustituir por menú hamburguesa */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+    height: 75px;
+  }
+
+  .logo-circle {
+    width: 70px;
+    height: 70px;
+    top: 12px;
+  }
+
+  .central-banner {
+    width: 92%;
+    padding: 30px 14px;
+  }
+
+  .trivia-card {
+    padding: 24px 18px;
+  }
+}

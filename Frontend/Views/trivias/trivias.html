@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Frontera Beisbolera - Trivias</title>
+  <link rel="stylesheet" href="trivias.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="..\home\index.html" class="nav-item active">Inicio</a>
+      <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
+      <a href="..\minijuego\minijuego.html" class="nav-item">Minijuego</a>
+      <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
+      <a href="..\trivias\trivias.html" class="nav-item active">Trivias</a>
+      <a href="..\perfil\perfil.html" class="nav-item btn-profile">Perfil</a>
+    </nav>
+
+    <a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+  </header>
+
+  <main class="page-container">
+    <section class="central-banner">
+      <div class="trivia-card">
+        <header class="card-header">
+          <div class="trivia-meta">
+            <span class="badge-category">LMB Clásica</span>
+            <span class="trivia-progress">Pregunta 1 de 5</span>
+          </div>
+          <h1 class="trivia-title">¿Cuál de estos equipos tiene la mayor cantidad de campeonatos en la historia de la Liga Mexicana de Beisbol?</h1>
+        </header>
+
+        <form class="trivia-form" id="triviaForm">
+          <div class="options-grid">
+            <label class="option-card">
+              <input type="radio" name="trivia-answer" value="1" required>
+              <span class="option-content">
+                <span class="option-indicator">A</span>
+                <span class="option-text">Diablos Rojos del México</span>
+              </span>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="trivia-answer" value="2">
+              <span class="option-content">
+                <span class="option-indicator">B</span>
+                <span class="option-text">Tigres de Quintana Roo</span>
+              </span>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="trivia-answer" value="3">
+              <span class="option-content">
+                <span class="option-indicator">C</span>
+                <span class="option-text">Sultanes de Monterrey</span>
+              </span>
+            </label>
+
+            <label class="option-card">
+              <input type="radio" name="trivia-answer" value="4">
+              <span class="option-content">
+                <span class="option-indicator">D</span>
+                <span class="option-text">Leones de Yucatán</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-card btn-confirm" onclick="window.location.href='#';">Siguiente</button>
+            <button type="button" class="btn-card btn-confirm" onclick="window.location.href='#';">Anterior</button>
+            <button type="submit" class="btn-card btn-confirm">Enviar respuestas</button>
+            <button type="button" class="btn-card btn-cancel" onclick="window.location.href='../home/home.html';">Salir</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-bar"></footer>
+
+  <script>
+    document.getElementById('triviaForm').addEventListener('submit', function(event) {
+
+      alert('¡Tu respuesta ha sido enviada con éxito!');
+
+      window.location.href = '../home/home.html';
+    });
+  </script>
+
+</body>
+</html>
