@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Frontera Beisbolera - Realidad Aumentada</title>
+  <link rel="stylesheet" href="realidad_aumentada.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/"
+    }
+  }
+</script>
+</script>
+  <script type="module" src="ar-engine.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <nav class="nav-links">
+
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="central-banner ar-fusion-container">
+
+      <div id="ar-container"></div> <!-- para cámara-->
+
+      <!-- Tarjeta de Información -->
+      <div id="info-card" class="info-card-oculta">
+        <div class="info-card-content">
+          <h3 id="info-titulo">Equipo</h3>
+          <p id="info-texto">Descripción del objeto...</p>
+          <button id="btn-cerrar-info"><i class="fa-solid fa-xmark"></i> Cerrar</button>
+        </div>
+      </div>
+      
+      <div class="ar-status-bar">
+        <span class="status-indicator live"><i class="fa-solid fa-circle"></i> Cámara Activa</span>
+        <div class="viewport-quick-tools">
+          <button type="button" class="btn-tool" id="btnCaptura" title="Captura de pantalla">
+  <i class="fa-solid fa-camera"></i>
+</button>
+        </div>
+      </div>
+
+      <div class="ar-scan-box">
+        <span class="corner top-left"></span>
+        <span class="corner top-right"></span>
+        <span class="corner bottom-left"></span>
+        <span class="corner bottom-right"></span>
+        
+        <div class="target-logo-wrapper">
+        
+          <div class="target-logo-fallback">MT</div>
+        </div>
+
+        <div class="scan-line"></div>
+      </div>
+
+      <div class="ar-bottom-actions">
+        <button type="button" class="btn-ar-action" id="btnInfo">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Info</span>
+        </button>
+        
+        <button type="button" class="btn-ar-action highlight" id="btnAnimacion">
+          <i class="fa-solid fa-cube"></i>
+          <span>Animación</span>
+        </button>
+
+        <button type="button" class="btn-ar-action highlight" id="btnParticulas">
+          <i class="fa-solid fa-cube"></i>
+          <span>Particulas</span>
+        </button>
+        
+        <button type="button" class="btn-ar-action" id="btnVisitar">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Visitar</span>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer-bar"></footer>
+
+  <script>
+    document.getElementById('btnVisitar').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+
+  <script>
+    fetch('../../Components/NavBar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.querySelector('header.navbar').innerHTML = data;
+    
+    // Lógica del menú hamburguesa
+    const btnMenu = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    if(btnMenu && navLinks) {
+        btnMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        });
+    }
+  });
+  </script>
+
+</body>
+</html>

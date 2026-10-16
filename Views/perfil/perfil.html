@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Frontera Beisbolera - Mi Perfil</title>
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="..\home\index.html" class="nav-item active">Inicio</a>
+      <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
+      <a href="..\minijuego\minijuego.html" class="nav-item">Minijuego</a>
+      <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
+      <a href="..\trivias\trivias.html" class="nav-item">Trivias</a>
+      <a href="..\perfil\perfil.html" class="nav-item active">Perfil</a>
+    </nav>
+
+    <a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+  </header>
+
+  <main class="page-container">
+    <section class="central-banner">
+      
+      <div class="profile-top-row">
+        <div class="profile-main-user">
+          <h1 class="user-display-name">Usuario1</h1>
+        </div>
+
+        <div class="profile-user-info">
+          <div class="info-list">
+            <p class="info-field"><span class="info-label">Nombre:</span> Juan</p>
+            <p class="info-field"><span class="info-label">Apellido P:</span> Pérez</p>
+            <p class="info-field"><span class="info-label">Apellido M:</span> Gómez</p>
+          </div>
+
+          <div class="profile-action-buttons">
+            <button type="button" class="btn-pill">Editar</button>
+            <button type="button" class="btn-pill">Cambiar contraseña</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-bottom-row">
+        <div class="profile-column">
+          <h2 class="section-column-title">Estampas</h2>
+          <div class="stamp-display-box">
+          </div>
+        </div>
+
+        <div class="profile-column">
+          <h2 class="section-column-title">Puntajes</h2>
+          <div class="scores-display-box">
+            
+            <div class="score-card">
+              <span class="score-game">Minijuego de Bateo</span>
+              <span class="score-number">450 pts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer-bar"></footer>
+
+</body>
+</html>
