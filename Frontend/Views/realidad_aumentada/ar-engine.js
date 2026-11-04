@@ -7,13 +7,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const clock = new THREE.Clock();
 
+    let mixerjocho;
+    let accionjocho;
+
     let mixerGuante; 
     let accionGuante;
+
+    let mixerDedoEspuma;
+    let accionDedoEspuma;
+
+    let mixerbebida;
+    let accionbebida;
+
+    let mixerBate;
+    let accionBate;
+
+    let mixerGorra;
+    let accionGorra;
+
+    let mixerbateador;
+    let accionbateador;
+
+    let mixercatcher;
+    let accioncatcher;
+
+    let mixerlanzador;
+    let accionlanzador;
+
+    let mixerpelota;
+    let accionpelota;
 
     // 1. Configuración principal de MindAR
     const mindarThree = new MindARThree({
   container: document.querySelector("#ar-container"),
-  imageTargetSrc: "../../Assets/Escudos.mind", // Tu nuevo archivo compilado múltiple
+  imageTargetSrc: "../../Assets/Escudos2.mind", // Tu nuevo archivo compilado múltiple
   uiScanning: "no"
 });
 
@@ -82,8 +109,22 @@ const gltfLoader = new GLTFLoader();
 // 2. Cargar el modelo para el Escudo 0 (Sultanes)
 gltfLoader.load('../../Assets/Modelos/Jocho3.glb', (gltf) => {
   const modeloAcereros = gltf.scene;
-  modeloAcereros.scale.set(1.0, 1.0, 1.0); 
+  modeloAcereros.scale.set(0.3, 0.3, 0.3); 
   anchorAcereros.group.add(modeloAcereros); // Se pega al ancla 0
+
+   if (gltf.animations && gltf.animations.length > 0) {
+    mixerjocho = new THREE.AnimationMixer(modeloAcereros);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionjocho = mixerjocho.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionjocho.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionjocho.clampWhenFinished = true; 
+  }
+
 });
 
 // 3. Cargar el modelo para el Escudo 1 (Ej. Dorados)
@@ -109,50 +150,164 @@ gltfLoader.load('../../Assets/Modelos/GuanteNLA2.glb', (gltf) => {
 
 gltfLoader.load('../../Assets/Modelos/GorraBebida1.glb', (gltf) => {
   const  modeloCaliente= gltf.scene;
-  modeloCaliente.scale.set(0.1, 0.1, 0.1); 
+  modeloCaliente.scale.set(0.7, 0.7, 0.7); 
   anchorCaliente.group.add(modeloCaliente); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerbebida = new THREE.AnimationMixer(modeloCaliente);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionbebida = mixerbebida.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionbebida.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionbebida.clampWhenFinished = true; 
+  }
+
+
 });
 
 gltfLoader.load('../../Assets/Modelos/Bate.glb', (gltf) => {
   const modeloCharros = gltf.scene;
-  modeloCharros.scale.set(0.1, 0.1, 0.1); 
+  modeloCharros.scale.set(0.3, 0.3, 0.3); 
   anchorCharros.group.add(modeloCharros); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerBate = new THREE.AnimationMixer(modeloCharros);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionBate = mixerBate.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionBate.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionBate.clampWhenFinished = true; 
+  }
+
 });
 
 gltfLoader.load('../../Assets/Modelos/Gorra.glb', (gltf) => {
   const modeloRieleros = gltf.scene;
-  modeloRieleros.scale.set(0.1, 0.1, 0.1); 
+  modeloRieleros.scale.set(0.5, 0.5, 0.5); 
   anchorRieleros.group.add(modeloRieleros); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerGorra = new THREE.AnimationMixer(modeloRieleros);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionGorra = mixerGorra.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionGorra.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionGorra.clampWhenFinished = true; 
+  }
+
 });
 
 gltfLoader.load('../../Assets/Modelos/DedoEspuma.glb', (gltf) => {
   const modeloSaraperos = gltf.scene;
   modeloSaraperos.scale.set(0.1, 0.1, 0.1); 
   anchorSaraperos.group.add(modeloSaraperos); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerDedoEspuma = new THREE.AnimationMixer(modeloSaraperos);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip2 = gltf.animations[0]; 
+    accionDedoEspuma = mixerDedoEspuma.clipAction(clip2);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionDedoEspuma.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionDedoEspuma.clampWhenFinished = true; 
+  }
+
+
 });
 
-gltfLoader.load('../../Assets/Modelos/Bateador_V1.glb', (gltf) => {
+gltfLoader.load('../../Assets/Modelos/Bateador_V2.glb', (gltf) => {
   const modeloSultanes = gltf.scene;
-  modeloSultanes.scale.set(0.1, 0.1, 0.1); 
+  modeloSultanes.scale.set(0.3, 0.3, 0.3); 
   anchorSultanes.group.add(modeloSultanes); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerbateador = new THREE.AnimationMixer(modeloSultanes);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionbateador = mixerbateador.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionbateador.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionbateador.clampWhenFinished = true; 
+  }
+
 });
 
-gltfLoader.load('../../Assets/Modelos/Catcher.glb', (gltf) => {
+gltfLoader.load('../../Assets/Modelos/Catcher1.glb', (gltf) => {
   const modeloTecolotes = gltf.scene;
-  modeloTecolotes.scale.set(0.1, 0.1, 0.1); 
+  modeloTecolotes.scale.set(0.3, 0.3, 0.3); 
   anchorTecolotes.group.add(modeloTecolotes); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixercatcher = new THREE.AnimationMixer(modeloTecolotes);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accioncatcher = mixercatcher.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accioncatcher.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accioncatcher.clampWhenFinished = true; 
+  }
+
 });
 
 gltfLoader.load('../../Assets/Modelos/Lanzador_V2.glb', (gltf) => {
   const modeloToros = gltf.scene;
-  modeloToros.scale.set(0.1, 0.1, 0.1); 
+  modeloToros.scale.set(0.3, 0.3, 0.3); 
   anchorToros.group.add(modeloToros); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerlanzador = new THREE.AnimationMixer(modeloToros);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionlanzador = mixerlanzador.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionlanzador.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionlanzador.clampWhenFinished = true; 
+  }
+
 });
 
 gltfLoader.load('../../Assets/Modelos/Pelota.glb', (gltf) => {
   const modeloAlgodoneros = gltf.scene;
   modeloAlgodoneros.scale.set(0.1, 0.1, 0.1); 
   anchorAlgodoneros.group.add(modeloAlgodoneros); // Se pega al ancla 1
+
+  if (gltf.animations && gltf.animations.length > 0) {
+    mixerpelota = new THREE.AnimationMixer(modeloAlgodoneros);
+    
+    // Extraemos la primera animación (índice 0) que hiciste en Blender
+    const clip = gltf.animations[0]; 
+    accionpelota = mixerpelota.clipAction(clip);
+    
+    // Opcional: Configurar para que solo se reproduzca una vez y no en bucle infinito
+    accionpelota.setLoop(THREE.LoopOnce);
+    // Para que regrese suavemente a su estado original, o se quede donde terminó
+    accionpelota.clampWhenFinished = true; 
+  }
+
 });
 
 // 1. Seleccionamos el botón del HTML usando su ID
@@ -161,6 +316,11 @@ const botonAnimacion = document.getElementById('btnAnimacion');
 // 2. Le indicamos qué hacer cuando reciba un clic
 botonAnimacion.addEventListener('click', () => {
   
+  if(accionjocho){
+    accionjocho.reset();
+    accionjocho.play();
+  }
+
   // Verificamos si la animación del guante ya se terminó de cargar
   if (accionGuante) {
     // reset() es vital: si el usuario presiona el botón varias veces, 
@@ -168,6 +328,47 @@ botonAnimacion.addEventListener('click', () => {
     accionGuante.reset(); 
     accionGuante.play();
   }
+
+  if (accionDedoEspuma) {
+    accionDedoEspuma.reset(); 
+    accionDedoEspuma.play();
+  }
+
+  if (accionbebida){
+    accionbebida.reset();
+    accionbebida.play();
+  }
+
+  if (accionBate){
+    accionBate.reset();
+    accionBate.play();
+  }
+  
+  if (accionGorra){
+    accionGorra.reset();
+    accionGorra.play();
+  }
+
+  if(accionbateador){
+    accionbateador.reset();
+    accionbateador.play();
+  }
+
+  if(accioncatcher){
+    accioncatcher.reset();
+    accioncatcher.play();
+  }
+
+  if(accionlanzador){
+    accionlanzador.reset();
+    accionlanzador.play();
+  }
+
+if (accionpelota){
+  accionpelota.reset();
+  accionpelota.play();
+}
+
 });
 
 
@@ -325,8 +526,45 @@ await mindarThree.start();
 renderer.setAnimationLoop(() => {
   const delta = clock.getDelta(); 
   
+  if(mixerjocho){
+    mixerjocho.update(delta);
+  }
+
   if (mixerGuante) {
     mixerGuante.update(delta); 
+  }
+
+  if (mixerDedoEspuma) {
+    mixerDedoEspuma.update(delta); 
+  }
+
+  if (mixerbebida){
+    mixerbebida.update(delta);
+  }
+
+  if (mixerBate){
+    mixerBate.update(delta);
+  }
+
+  if (mixerGorra){
+    mixerGorra.update(delta);
+  }
+
+  if(mixerbateador){
+    mixerbateador.update(delta);
+  }
+
+  if(mixercatcher){
+    mixercatcher.update(delta);
+  }
+
+  
+  if(mixerlanzador){
+    mixerlanzador.update(delta);
+  }
+
+  if (mixerpelota){
+    mixerpelota.update(delta);
   }
   
   if (sistemaConfeti) {

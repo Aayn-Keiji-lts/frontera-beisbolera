@@ -1,0 +1,113 @@
+/* navbar.css */
+.navbar {
+  height: 90px;
+  background-color: #031842;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  z-index: 100; /* Asegura que el menú siempre esté por encima de todo */
+}
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #e8e2d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.logo-circle:hover {
+  transform: scale(1.03);
+}
+
+.logo-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #a8c4f0;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.logout-btn {
+  color: #a8c4f0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover {
+  color: #ff6b6b;
+}
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Diseño para Celulares */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 20px;
+    height: 75px;
+  }
+  
+  .logo-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hamburger-menu {
+    display: block; /* Muestra el botón de hamburguesa */
+  }
+
+  .logout-btn {
+    display: block ; /* Oculta el botón de salir suelto para que no estorbe */
+  }
+
+  .nav-links {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 75px; /* Altura del navbar en móvil */
+    left: 0;
+    width: 100%;
+    background-color: #031842;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+
+  /* Esta es la clase que JavaScript activa al hacer clic */
+  .nav-links.active {
+    display: flex; 
+  }
+}

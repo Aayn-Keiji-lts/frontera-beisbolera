@@ -6,56 +6,79 @@
   <title>Minijuego - Base</title>
   <link rel="stylesheet" href="minijuego.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../../Components/navbar.css">
 </head>
 <body>
 
   <header class="navbar">
-    <div class="logo-wrapper">
-      <div class="logo-circle">
-        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
-      </div>
-    </div>
-
     <nav class="nav-links">
-      <a href="..\home\index.html" class="nav-item active">Inicio</a>
-      <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
-      <a href="..\minijuego\minijuego.html" class="nav-item active">Minijuego</a>
-      <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
-      <a href="..\trivias\trivias.html" class="nav-item">Trivias</a>
-      <a href="..\perfil\perfil.html" class="nav-item">Perfil</a>
+
     </nav>
-
-    <a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
-      <i class="fa-solid fa-arrow-right-from-bracket"></i>
-    </a>
-
-    <button type="button" class="mobile-menu-btn" aria-label="Abrir menú">
-      <i class="fa-solid fa-bars"></i>
-    </button>
   </header>
 
   <main class="game-container">
+    
+    <div id="game-status-panel">
+      <div id="strikes-counter">Strikes: 0 / 3</div>
+      <div id="points-counter">Puntos: 0</div>
+    </div>
+
+    <div id="game-overlay">
+      <h2 id="overlay-title">Frontera Beisbolera</h2>
+      <p id="overlay-message">¡Presiona batear cuando la línea esté en verde para un Home Run!</p>
+      <button type="button" id="btn-iniciar-juego">Iniciar Juego</button>
+    </div>
+
     <section class="stadium-stage">
       
-      <div class="precision-bar">
-        <div class="color-zone red"></div>
-        <div class="color-zone yellow"></div>
-        <div class="color-zone green"></div>
-        <div class="color-zone yellow"></div>
-        <div class="color-zone red"></div>
-        
-        <div class="target-line"></div>
+      <!-- Fondo desenfocado del estadio -->
+      <div class="stadium-bg"></div>
+      
+      <!-- Contenedor del bate y la pelota para animarlos -->
+      <div class="game-assets" id="animacion-bateo">
+        <img src="../../Assets/Pelota.png" alt="Pelota" class="ball-img">
+        <img src="../../Assets/Bate.png" alt="Bate" class="bat-img">
       </div>
 
-      <button type="button" class="btn-batear btn-desktop">Batear</button>
+      <div id="action-message"></div>
+
+      <div class="precision-bar" id="barra-precision">
+        <div class="color-zone red top-red"></div>
+        <div class="color-zone yellow top-yellow"></div>
+        <div class="color-zone green center-green"></div>
+        <div class="color-zone yellow bottom-yellow"></div>
+        <div class="color-zone red bottom-red"></div>
+        <div class="target-line" id="linea-indicadora"></div>
+      </div>
+
+      <button type="button" class="btn-batear btn-desktop btn-accion">Batear</button>
     </section>
 
     <div class="mobile-bottom-area">
-      <button type="button" class="btn-batear btn-mobile">Batear</button>
+      <button type="button" class="btn-batear btn-mobile btn-accion">Batear</button>
     </div>
   </main>
 
   <footer class="footer-bar"></footer>
 
+  <!-- Aquí enlazamos tu nuevo archivo JavaScript -->
+   <script>
+    fetch('../../Components/NavBar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.querySelector('header.navbar').innerHTML = data;
+    
+    // Lógica del menú hamburguesa
+    const btnMenu = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    if(btnMenu && navLinks) {
+        btnMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        });
+    }
+  });
+  </script>
+  <script src="minijuego.js"></script>
+  
 </body>
 </html>
