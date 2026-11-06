@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Frontera Beisbolera - Mi Perfil</title>
+  <link rel="stylesheet" href="perfil.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="../home/index.html" class="nav-item active">Inicio</a>
+      <a href="../principal_equipos/principal_equipos.html" class="nav-item">Equipos</a>
+      <a href="../minijuego/minijuego.html" class="nav-item">Minijuego</a>
+      <a href="../realidad_aumentada/realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
+      <a href="../trivias/trivias.html" class="nav-item">Trivias</a>
+      <a href="../perfil/perfil.html" class="nav-item active">Perfil</a>
+    </nav>
+
+    <a href="#" class="logout-btn" id="logout-button" title="Cerrar sesión">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+  </header>
+
+  <main class="page-container">
+    <section class="central-banner">
+      <p id="profile-message" class="profile-message" role="status" aria-live="polite">Cargando perfil...</p>
+      <div class="profile-top-row">
+        <div class="profile-main-user">
+          <h1 class="user-display-name" id="display-username">Mi perfil</h1>
+          <p class="profile-since" id="profile-since"></p>
+        </div>
+        <div class="profile-user-info">
+          <div class="info-list">
+            <p class="info-field"><span class="info-label">Nombre:</span> <span id="profile-name">—</span></p>
+            <p class="info-field"><span class="info-label">Apellido P:</span> <span id="profile-lastname">—</span></p>
+            <p class="info-field"><span class="info-label">Apellido M:</span> <span id="profile-mothername">—</span></p>
+          </div>
+          <div class="profile-action-buttons">
+            <button type="button" class="btn-pill" id="edit-profile-button">Editar perfil</button>
+            <button type="button" class="btn-pill" id="change-password-button">Cambiar contraseña</button>
+          </div>
+        </div>
+      </div>
+
+      <form id="edit-profile-form" class="profile-form" hidden>
+        <h2>Editar información</h2>
+        <div class="profile-form-grid">
+          <label>Nombre<input name="nombre" maxlength="80" required></label>
+          <label>Apellido paterno<input name="apellido_paterno" maxlength="80" required></label>
+          <label>Apellido materno<input name="apellido_materno" maxlength="80" required></label>
+          <label>Nombre de usuario<input name="nombre_usuario" minlength="3" maxlength="40" pattern="[A-Za-z0-9_.-]{3,40}" required></label>
+        </div>
+        <div class="profile-action-buttons">
+          <button class="btn-pill" type="submit">Guardar cambios</button>
+          <button class="btn-pill" type="button" data-close-form="edit-profile-form">Cancelar</button>
+        </div>
+      </form>
+
+      <form id="password-form" class="profile-form" hidden>
+        <h2>Cambiar contraseña</h2>
+        <div class="profile-form-grid">
+          <label>Contraseña actual<input name="actual" type="password" autocomplete="current-password" required></label>
+          <label>Nueva contraseña<input name="nueva" type="password" minlength="8" maxlength="72" autocomplete="new-password" required></label>
+        </div>
+        <div class="profile-action-buttons">
+          <button class="btn-pill" type="submit">Actualizar contraseña</button>
+          <button class="btn-pill" type="button" data-close-form="password-form">Cancelar</button>
+        </div>
+      </form>
+
+      <div class="profile-bottom-row">
+        <div class="profile-column">
+          <h2 class="section-column-title">Estampas</h2>
+          <div class="stamp-display-box" id="stamp-list">
+            <p class="empty-profile">Todavía no tienes estampas.</p>
+          </div>
+        </div>
+        <div class="profile-column">
+          <h2 class="section-column-title">Puntajes</h2>
+          <div class="scores-display-box" id="scores-list">
+            <p class="empty-profile">Aún no hay puntajes registrados.</p>
+          </div>
+        </div>
+      </div>
+      <section class="trivia-scores">
+        <h2 class="section-column-title">Resultados de trivias</h2>
+        <div id="trivia-list" class="scores-display-box">
+          <p class="empty-profile">Aún no has completado trivias.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer-bar"></footer>
+  <script src="perfil.js"></script>
+  <script src="../session-ui.js"></script>
+
+</body>
+</html>

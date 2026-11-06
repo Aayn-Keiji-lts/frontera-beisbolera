@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minijuego - Base</title>
+  <link rel="stylesheet" href="minijuego.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="..\home\index.html" class="nav-item active">Inicio</a>
+      <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
+      <a href="..\minijuego\minijuego.html" class="nav-item active">Minijuego</a>
+      <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
+      <a href="..\trivias\trivias.html" class="nav-item">Trivias</a>
+      <a href="..\perfil\perfil.html" class="nav-item">Perfil</a>
+    </nav>
+
+    <a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+
+    <button type="button" class="mobile-menu-btn" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <main class="game-container">
+    <section class="stadium-stage">
+      
+      <div class="precision-bar">
+        <div class="color-zone red"></div>
+        <div class="color-zone yellow"></div>
+        <div class="color-zone green"></div>
+        <div class="color-zone yellow"></div>
+        <div class="color-zone red"></div>
+        
+        <div class="target-line"></div>
+      </div>
+
+      <button type="button" class="btn-batear btn-desktop">Batear</button>
+    </section>
+
+    <div class="mobile-bottom-area">
+      <button type="button" class="btn-batear btn-mobile">Batear</button>
+    </div>
+  </main>
+
+  <footer class="footer-bar"></footer>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Frontera Beisbolera - Realidad Aumentada</title>
+  <link rel="stylesheet" href="realidad_aumentada.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="..\home\index.html" class="nav-item active">Inicio</a>
+      <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
+      <a href="..\minijuego\minijuego.html" class="nav-item">Minijuego</a>
+      <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item active">Realidad Aumentada</a>
+      <a href="..\trivias\trivias.html" class="nav-item">Trivias</a>
+      <a href="..\perfil\perfil.html" class="nav-item">Perfil</a>
+    </nav>
+
+    <a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+  </header>
+
+  <main class="page-container">
+    <section class="central-banner ar-fusion-container">
+      
+      <div class="ar-status-bar">
+        <span class="status-indicator live"><i class="fa-solid fa-circle"></i> Cámara Activa</span>
+        <div class="viewport-quick-tools">
+          <button type="button" class="btn-tool" title="Recalibrar vista"><i class="fa-solid fa-rotate"></i></button>
+          <button type="button" class="btn-tool" title="Captura de pantalla"><i class="fa-solid fa-camera"></i></button>
+          <button type="button" class="btn-tool" title="Pantalla completa"><i class="fa-solid fa-expand"></i></button>
+        </div>
+      </div>
+
+      <div class="ar-scan-box">
+        <span class="corner top-left"></span>
+        <span class="corner top-right"></span>
+        <span class="corner bottom-left"></span>
+        <span class="corner bottom-right"></span>
+        
+        <div class="target-logo-wrapper">
+          <img src="../multimedia/logo-sultanes.png" alt="Target Sultanes LMB" class="target-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="target-logo-fallback">MT</div>
+        </div>
+
+        <div class="scan-line"></div>
+      </div>
+
+      <div class="ar-bottom-actions">
+        <button type="button" class="btn-ar-action" id="btnInfo">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Info</span>
+        </button>
+        
+        <button type="button" class="btn-ar-action highlight" id="btnAnimacion">
+          <i class="fa-solid fa-cube"></i>
+          <span>Animación</span>
+        </button>
+
+        <button type="button" class="btn-ar-action highlight" id="btnParticulas">
+          <i class="fa-solid fa-cube"></i>
+          <span>Particulas</span>
+        </button>
+        
+        <button type="button" class="btn-ar-action" id="btnVisitar">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Visitar</span>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer-bar"></footer>
+
+  <script>
+    document.getElementById('btnInfo').addEventListener('click', () => {
+      alert('Información del equipo: Sultanes de Monterrey (LMB)');
+    });
+    document.getElementById('btnAnimacion').addEventListener('click', () => {
+      alert('Cargando animación 3D del bateador...');
+    });
+    document.getElementById('btnVisitar').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>

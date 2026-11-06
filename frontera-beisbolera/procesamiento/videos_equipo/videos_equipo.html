@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki Frontera Beisbolera - Reproductor de Video</title>
+  <link rel="stylesheet" href="videos_equipo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrapper">
+      <div class="logo-circle">
+        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="..\home\index.html" class="nav-item active">Inicio</a>
+      <a href="../principal_equipos/principal_equipos.html" class="nav-item active">Equipos</a>
+      <a href="../minijuego/minijuego.html" class="nav-item">Minijuego</a>
+      <a href="../realidad_aumentada/realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
+      <a href="../trivias/trivias.html" class="nav-item">Trivias</a>
+      <a href="../perfil/perfil.html" class="nav-item">Perfil</a>
+    </nav>
+
+    <a href="../inicio_sesion/inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+    </a>
+
+    <button type="button" class="mobile-menu-btn" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <main class="page-container">
+    <section class="central-banner">
+      
+      <h1 class="video-section-title">videos</h1>
+
+      <div class="video-display-box" id="videoBox">
+        <button type="button" class="btn-play-trigger" id="btnPlay" aria-label="Reproducir video">
+          <i class="fa-solid fa-play"></i>
+        </button>
+      </div>
+
+      <h2 class="filters-heading">Filtros</h2>
+
+      <div class="filters-grid">
+        <button type="button" class="btn-filter active" data-filter="none">Normal</button>
+        <button type="button" class="btn-filter" data-filter="pixelado">pixelado</button>
+        <button type="button" class="btn-filter" data-filter="desenfoque">desenfoque</button>
+        <button type="button" class="btn-filter" data-filter="termica">Camara termica</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer-bar"></footer>
+
+</body>
+</html>

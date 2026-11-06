@@ -1,0 +1,250 @@
+:root {
+  --bg-dark: #020d24;
+  --nav-bg: #03153b;
+  --banner-blue: #052a78;
+  --side-cream: #ece5d8;
+  --screen-lavender: #656d9e;
+  --btn-filter-bg: #d0d2d6;
+  --btn-filter-text: #111111;
+  --text-light: #ffffff;
+  --text-muted: #a8c4f0;
+  --accent-blue: #1452ba;
+  --radius-sm: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: #031438;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.navbar {
+  height: 90px;
+  background-color: #031842;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #e8e2d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.logo-circle:hover {
+  transform: scale(1.03);
+}
+
+.logo-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 110px;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.logout-btn {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  text-decoration: none;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover {
+  color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .logo-circle {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn {
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 22px;
+  border-radius: 2px;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  display: inline-block;
+}
+
+.btn-registro {
+  background-color: #0a2d74;
+  color: #a8c4f0;
+}
+
+.btn-registro:hover {
+  background-color: #0d3891;
+  color: #ffffff;
+}
+
+.btn-login {
+  background-color: #0b3488;
+  color: #c9dbf7;
+}
+
+.btn-login:hover {
+  background-color: #0f41aa;
+  color: #ffffff;
+}
+
+.page-container {
+  flex: 1;
+  background-color: #e8e2d8;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.central-banner {
+  width: 100%;
+  max-width: 80%;
+  background-color: #052a78; 
+  padding: 40px 60px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.central-banner .central-image {
+  max-width: 100%;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+.central-image {
+  width: 500px;         
+  max-width: 500px;   
+  height: auto;       
+  display: block;
+  margin: 0 auto;     
+}
+
+.lmb-logo-wrapper {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.lmb-img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.lmb-badge-fallback {
+  display: none;
+  background: #031842;
+  border: 3px solid #ffffff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.lmb-badge-title {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.lmb-badge-icon {
+  font-size: 28px;
+}
+
+.description-text {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: left;
+  letter-spacing: 0.1px;
+}
+
+.image-container {
+  max-width: 80px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.footer-bar {
+  height: 50px;
+  background-color: #031438;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+    height: 75px;
+  }
+
+  .logo-img, .logo-fallback {
+    width: 55px;
+    height: 55px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .central-banner {
+    width: 90%;
+    padding: 30px 20px 40px 20px;
+  }
+
+  .description-text {
+    font-size: 14px;
+  }
+}

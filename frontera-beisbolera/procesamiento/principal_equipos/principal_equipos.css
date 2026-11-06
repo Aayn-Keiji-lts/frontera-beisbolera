@@ -1,0 +1,263 @@
+:root {
+  --bg-dark: #020d24;
+  --nav-bg: #03153b;
+  --banner-blue: #052a78;
+  --side-cream: #ece5d8;
+  --card-bg: #f5f4f0;
+  --text-light: #ffffff;
+  --text-dark: #141c2b;
+  --text-muted: #a8c4f0;
+  --accent-blue: #155bd5;
+  --border-subtle: #d6d3cb;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  height: 90px;
+  background-color: #031842;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #e8e2d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.logo-circle:hover {
+  transform: scale(1.03);
+}
+
+.logo-img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 110px;
+}
+
+.nav-item {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.logout-btn {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  text-decoration: none;
+  padding: 8px;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover {
+  color: #ff6b6b;
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+.page-container {
+  flex: 1;
+  background-color: var(--side-cream);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.central-banner {
+  width: 76%;
+  max-width: 1100px;
+  background-color: var(--banner-blue);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 50px 60px 50px;
+  gap: 28px;
+}
+
+.gallery-header {
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.gallery-subtitle {
+  font-size: 0.9rem;
+  color: #b8cbed;
+  margin-top: 4px;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.team-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 22px 16px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent-blue);
+}
+
+.team-card-logo {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.logo-fallback {
+  display: none;
+  width: 70px;
+  height: 70px;
+  background-color: #031842;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.footer-bar {
+  height: 45px;
+  background-color: var(--bg-dark);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 16px;
+    height: 75px;
+  }
+
+  .logo-circle {
+    width: 65px;
+    height: 65px;
+    top: 12px;
+  }
+
+  .nav-links,
+  .logout-btn {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #1452ba;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .central-banner {
+    width: 92%;
+    padding: 28px 16px 40px 16px;
+  }
+
+  .gallery-title {
+    font-size: 1.4rem;
+  }
+
+  .teams-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .team-card {
+    padding: 16px 10px;
+  }
+
+  .team-card-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .team-card-name {
+    font-size: 0.78rem;
+  }
+}
