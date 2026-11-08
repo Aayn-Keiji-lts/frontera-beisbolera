@@ -1,22 +1,28 @@
 <div class="logo-wrapper">
   <div class="logo-circle">
-    <img src="../../Assets/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
+    <img src="../../Assets/Images/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
   </div>
 </div>
 
-<button class="hamburger-menu" id="mobile-menu-btn">
+<button class="hamburger-menu" id="mobile-menu-btn" aria-label="Menú navegación">
   <i class="fa-solid fa-bars"></i>
 </button>
 
 <nav class="nav-links" id="nav-links">
-  <a href="..\home\index.html" class="nav-item">Inicio</a>
-  <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
-  <a href="..\minijuego\minijuego.html" class="nav-item">Minijuego</a>
-  <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item active">Realidad Aumentada</a>
-  <a href="..\trivias\trivias.html" class="nav-item">Trivias</a>
-  <a href="..\perfil\perfil.html" class="nav-item">Perfil</a>
+  <a href="../home/index.html" class="nav-item">Inicio</a>
+  <a href="../principal_equipos/principal_equipos.html" class="nav-item">Equipos</a>
+
+  <!-- Enlaces de invitados -->
+  <a href="../inicio_sesion/inicio_sesion.html" class="nav-item guest-only">Iniciar Sesión</a>
+  <a href="../registro/registro.html" class="nav-item guest-only">Registro</a>
+
+  <!-- Enlaces de usuario con sesión -->
+  <a href="../minijuego/minijuego.html" class="nav-item user-only">Minijuego</a>
+  <a href="../realidad_aumentada/realidad_aumentada.html" class="nav-item user-only">Realidad Aumentada</a>
+  <a href="../trivias/trivias.html" class="nav-item user-only">Trivias</a>
+  <a href="../perfil/perfil.html" class="nav-item user-only">Perfil</a>
 </nav>
 
-<a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
+<button type="button" id="logout-btn" class="logout-btn user-only" title="Cerrar sesión">
   <i class="fa-solid fa-arrow-right-from-bracket"></i>
-</a>
+</button>
