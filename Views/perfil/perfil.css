@@ -27,6 +27,9 @@ body {
   flex-direction: column;
 }
 
+/* ============================
+   NAVBAR SUPERIOR & NAVEGACIÓN MODULAR
+   ============================ */
 .navbar {
   height: 90px;
   background-color: #031842;
@@ -47,6 +50,11 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.03);
 }
 
 .logo-img {
@@ -78,18 +86,49 @@ body {
   color: #ffffff;
 }
 
-.logout-btn {
+button.logout-btn {
+  background: none;
+  border: none;
   color: var(--text-muted);
   font-size: 1.15rem;
-  text-decoration: none;
+  cursor: pointer;
   padding: 8px;
-  transition: color 0.2s;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease;
 }
 
-.logout-btn:hover {
+button.logout-btn:hover {
   color: #ff6b6b;
 }
 
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #a8c4f0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ============================
+   VISIBILIDAD CONDICIONAL DE SESIÓN
+   ============================ */
+.user-only,
+.guest-only {
+  display: none !important;
+}
+
+body.is-logged-in .user-only {
+  display: inline-flex !important;
+}
+
+body.is-guest .guest-only {
+  display: inline-flex !important;
+}
+
+/* ============================
+   ESTILOS DE LA PÁGINA PERFIL
+   ============================ */
 .page-container {
   flex: 1;
   background-color: var(--side-cream);
@@ -196,10 +235,49 @@ body {
 
 .stamp-display-box {
   width: 100%;
-  height: 190px;
+  min-height: 190px;
   background-color: var(--box-lavender);
   border-radius: var(--radius-md);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  gap: 12px;
+  align-content: start;
+}
+
+.stamp-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.stamp-card img,
+.stamp-placeholder {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.stamp-placeholder {
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 2rem;
+}
+
+.stamp-card span,
+.stamp-card small {
+  color: #d1ddf7;
+  font-size: 0.78rem;
 }
 
 .scores-display-box {
@@ -231,12 +309,86 @@ body {
   color: #ffd166;
 }
 
+.empty-profile {
+  color: #d1ddf7;
+  padding: 18px;
+  text-align: center;
+}
+
+.trivia-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-message {
+  min-height: 22px;
+  color: #dce8ff;
+  font-size: 0.9rem;
+}
+
+.profile-message.is-error {
+  color: #ffb4b4;
+}
+
+.profile-message.is-success {
+  color: #b8f5c5;
+}
+
+.profile-since {
+  color: #c5d7f5;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.profile-form {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.profile-form[hidden] {
+  display: none;
+}
+
+.profile-form h2 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.profile-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #d1ddf7;
+  font-size: 0.9rem;
+}
+
+.profile-form-grid input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #9eb4dc;
+  border-radius: 6px;
+  font: inherit;
+}
+
 .footer-bar {
   height: 45px;
   background-color: var(--bg-dark);
   width: 100%;
 }
 
+/* ============================
+   RESPONSIVE MÓVIL
+   ============================ */
 @media (max-width: 900px) {
   .central-banner {
     padding: 35px 25px;
@@ -260,9 +412,29 @@ body {
   }
 
   .logo-circle {
-    width: 70px;
-    height: 70px;
-    top: 12px;
+    width: 65px;
+    height: 65px;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #031842;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .central-banner {
@@ -272,5 +444,15 @@ body {
 
   .user-display-name {
     font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-action-buttons {
+    flex-wrap: wrap;
   }
 }

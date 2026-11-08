@@ -13,6 +13,9 @@ body {
   flex-direction: column;
 }
 
+/* ============================
+   NAVBAR SUPERIOR & NAVEGACIÓN
+   ============================ */
 .navbar {
   height: 90px;
   background-color: #031842;
@@ -33,7 +36,9 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.2s ease;
 }
+
 .logo-circle:hover {
   transform: scale(1.03);
 }
@@ -57,6 +62,7 @@ body {
   color: #a8c4f0;
   padding: 8px 14px;
   border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 .nav-item.active,
@@ -65,16 +71,49 @@ body {
   color: #ffffff;
 }
 
-.logout-btn {
+button.logout-btn {
+  background: none;
+  border: none;
   color: #a8c4f0;
   font-size: 1.2rem;
-  text-decoration: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease;
 }
 
-.mobile-menu-btn {
+button.logout-btn:hover {
+  color: #ff6b6b;
+}
+
+.hamburger-menu {
   display: none;
+  background: none;
+  border: none;
+  color: #a8c4f0;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
+/* ============================
+   VISIBILIDAD CONDICIONAL DE SESIÓN
+   ============================ */
+.user-only,
+.guest-only {
+  display: none !important;
+}
+
+body.is-logged-in .user-only {
+  display: inline-flex !important;
+}
+
+body.is-guest .guest-only {
+  display: inline-flex !important;
+}
+
+/* ============================
+   CONTENEDOR DEL MINIJUEGO
+   ============================ */
 .game-container {
   flex: 1;
   background-color: #052a78;
@@ -181,6 +220,9 @@ body {
   width: 100%;
 }
 
+/* ============================
+   RESPONSIVE MÓVIL
+   ============================ */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 16px;
@@ -190,27 +232,31 @@ body {
   .logo-circle {
     width: 65px;
     height: 65px;
-    top: 12px;
   }
 
-  .nav-links,
-  .logout-btn,
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #031842;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
   .btn-desktop {
     display: none;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    background-color: #1452ba;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    cursor: pointer;
   }
 
   .stadium-stage {

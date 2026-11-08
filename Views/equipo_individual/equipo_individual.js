@@ -1,7 +1,7 @@
 const equiposData = {
   sultanes: {
     nombre: "Sultanes de Monterrey",
-    logo: "../multimedia/sultanes icon.png",
+    logo: "../../Assets/Images/logos-equipos/sultanes-logo.png",
     fallback: "MT",
     descripcion: "Los Sultanes de Monterrey son un equipo tradicional de la Liga Mexicana de Béisbol con sede en Monterrey, Nuevo León, fundados en 1939.",
     momento: {
@@ -51,7 +51,7 @@ const equiposData = {
   },
   diablos: {
     nombre: "Diablos Rojos del México",
-    logo: "../multimedia/logo-diablos.png",
+    logo: "../../Assets/Images/logos-equipos/diablos-logo.png",
     fallback: "MEX",
     descripcion: "Los Diablos Rojos del México son una de las franquicias más laureadas y representativas del béisbol mexicano, con sede en el Estadio Alfredo Harp Helú.",
     momento: {
@@ -100,7 +100,7 @@ const equiposData = {
   },
   tigres: {
     nombre: "Tigres de Quintana Roo",
-    logo: "../multimedia/logo-tigres.png",
+    logo: "../../Assets/Images/logos-equipos/tigres-logo.png",
     fallback: "TIG",
     descripcion: "Los Tigres de Quintana Roo, anteriormente Tigres capitalinos, cuentan con una larga y gloriosa tradición en el circuito de verano.",
     momento: {
@@ -149,7 +149,7 @@ const equiposData = {
   },
   toros: {
     nombre: "Toros de Tijuana",
-    logo: "../multimedia/logo-toros.png",
+    logo: "../../Assets/Images/logos-equipos/toros-logo.png",
     fallback: "TIJ",
     descripcion: "Los Toros de Tijuana representan a la frontera norte con gran poderío ofensivo y títulos recientes en la Serie del Rey.",
     momento: {
@@ -198,7 +198,7 @@ const equiposData = {
   },
   leones: {
     nombre: "Leones de Yucatán",
-    logo: "../multimedia/logo-leones.png",
+    logo: "../../Assets/Images/logos-equipos/leones-logo.png",
     fallback: "YUC",
     descripcion: "Los Leones de Yucatán son los reyes de la Zona Sur, reconocidos por su excelente pitcheo y su apasionada afición en Mérida.",
     momento: {
@@ -247,7 +247,7 @@ const equiposData = {
   },
   acereros: {
     nombre: "Acereros de Monclova",
-    logo: "../multimedia/logo-acereros.png",
+    logo: "../../Assets/Images/logos-equipos/acereros-logo.png",
     fallback: "MVA",
     descripcion: "La Furia Azul de Monclova, un equipo de gran tradición en Coahuila que logró consagrarse en la Serie del Rey 2019.",
     momento: {
@@ -296,7 +296,7 @@ const equiposData = {
   },
   algodoneros: {
     nombre: "Algodoneros Unión Laguna",
-    logo: "../multimedia/logo-algodoneros.png",
+    logo: "../../Assets/Images/logos-equipos/algodoneros-logo.png",
     fallback: "LAG",
     descripcion: "Representantes de la Comarca Lagunera, uno de los equipos más antiguos y queridos de la pelota veraniega mexicana.",
     momento: {
@@ -345,7 +345,7 @@ const equiposData = {
   },
   pericos: {
     nombre: "Pericos de Puebla",
-    logo: "../multimedia/logo-pericos.png",
+    logo: "../../Assets/Images/logos-equipos/pericos-logo.png",
     fallback: "PUE",
     descripcion: "Los Pericos de Puebla han destacado como uno de los equipos más competitivos del país, con múltiples campeonatos de la LMB.",
     momento: {
@@ -394,7 +394,7 @@ const equiposData = {
   },
   saraperos: {
     nombre: "Saraperos de Saltillo",
-    logo: "../multimedia/logo-saraperos.png",
+    logo: "../../Assets/Images/logos-equipos/saraperos-logo.png",
     fallback: "SAL",
     descripcion: "El Sarape de Saltillo cuenta con una rica historia y un inolvidable bicampeonato en la LMB (2009 y 2010).",
     momento: {

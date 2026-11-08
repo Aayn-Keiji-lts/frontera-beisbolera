@@ -29,6 +29,9 @@ body {
   flex-direction: column;
 }
 
+/* ============================
+   NAVBAR SUPERIOR & NAVEGACIÓN MODULAR
+   ============================ */
 .navbar {
   height: 90px;
   background-color: #031842;
@@ -40,13 +43,6 @@ body {
   z-index: 10;
 }
 
-.logo-wrapper {
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
 .logo-circle {
   width: 70px;
   height: 70px;
@@ -56,6 +52,11 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.logo-circle:hover {
+  transform: scale(1.03);
 }
 
 .logo-img {
@@ -88,22 +89,49 @@ body {
   font-weight: 600;
 }
 
-.btn-profile {
-  background-color: var(--accent-blue);
-  color: #ffffff !important;
-}
-
-.logout-btn {
+button.logout-btn {
+  background: none;
+  border: none;
   color: #a8c4f0;
   font-size: 1.15rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
   padding: 8px;
   border-radius: var(--radius-sm);
+  transition: color 0.2s ease;
 }
 
+button.logout-btn:hover {
+  color: #ff6b6b;
+}
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #a8c4f0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ============================
+   VISIBILIDAD CONDICIONAL DE SESIÓN
+   ============================ */
+.user-only,
+.guest-only {
+  display: none !important;
+}
+
+body.is-logged-in .user-only {
+  display: inline-flex !important;
+}
+
+body.is-guest .guest-only {
+  display: inline-flex !important;
+}
+
+/* ============================
+   CONTENEDOR Y TARJETA DE TRIVIAS
+   ============================ */
 .page-container {
   flex: 1;
   background-color: var(--side-cream);
@@ -282,6 +310,7 @@ body {
   max-width: 90px;
 }
 
+/* Modal de Recompensa */
 .reward-modal {
   position: absolute;
   top: 0;
@@ -397,14 +426,39 @@ body {
   width: 100%;
 }
 
+/* ============================
+   RESPONSIVE MÓVIL
+   ============================ */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
     height: 75px;
   }
 
+  .logo-circle {
+    width: 65px;
+    height: 65px;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
   .nav-links {
     display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #031842;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .central-banner {

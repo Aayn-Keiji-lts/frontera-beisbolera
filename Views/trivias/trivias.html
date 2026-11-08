@@ -12,26 +12,8 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo-wrapper">
-      <div class="logo-circle">
-        <img src="../multimedia/logo-frontera-beisbolera.png" alt="Logo" class="logo-img" onerror="this.style.display='none';">
-      </div>
-    </div>
-
-    <nav class="nav-links">
-      <a href="..\home\index.html" class="nav-item">Inicio</a>
-      <a href="..\principal_equipos\principal_equipos.html" class="nav-item">Equipos</a>
-      <a href="..\minijuego\minijuego.html" class="nav-item">Minijuego</a>
-      <a href="..\realidad_aumentada\realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
-      <a href="..\trivias\trivias.html" class="nav-item active">Trivias</a>
-      <a href="..\perfil\perfil.html" class="nav-item btn-profile">Perfil</a>
-    </nav>
-
-    <a href="..\inicio_sesion\inicio_sesion.html" class="logout-btn" title="Cerrar sesión">
-      <i class="fa-solid fa-arrow-right-from-bracket"></i>
-    </a>
-  </header>
+  <!-- Contenedor dinámico inyectado por navbar.js -->
+  <header class="navbar" id="navbar-container"></header>
 
   <main class="page-container">
     <section class="central-banner">
@@ -65,7 +47,6 @@
           
           <div class="stamp-wrapper">
             <div class="stamp-frame">
-              <!-- ID corregido a stampImg -->
               <img 
                 src="" 
                 alt="Estampa Desbloqueada" 
@@ -91,6 +72,8 @@
 
   <footer class="footer-bar"></footer>
 
+  <!-- Script modular para inyectar Navbar y controlar la sesión -->
+  <script src="../../components/navbar.js"></script>
   <script src="trivias.js"></script>
 
 </body>

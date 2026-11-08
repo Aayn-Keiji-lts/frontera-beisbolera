@@ -1,3 +1,4 @@
+// 1. Banco de 40 preguntas sobre la Liga Mexicana de Béisbol (LMB)
 const questionBank = [
   { q: "¿Cuál equipo ostenta más campeonatos en la historia de la LMB?", opts: ["Diablos Rojos del México", "Tigres de Quintana Roo", "Sultanes de Monterrey", "Leones de Yucatán"], ans: 0 },
   { q: "¿En qué año se fundó la Liga Mexicana de Béisbol?", opts: ["1925", "1938", "1946", "1910"], ans: 0 },
@@ -41,21 +42,22 @@ const questionBank = [
   { q: "¿Cuántos outs se necesitan para completar una entrada completa (ambos equipos)?", opts: ["6 outs", "3 outs", "4 outs", "8 outs"], ans: 0 }
 ];
 
-// Estampas con tu ruta
+// 2. Colección de estampas regulares con la ruta relativa exacta a dos niveles arriba
 const regularStamps = [
-  { id: "vargas", name: "Kennys Vargas #19", img: "../../Assets/Images/estampas/RamiroPena.png" },
-  { id: "carter", name: "Chris Carter #23", img: "../../Assets/Images/estampas/ChrisCarter.png" },
-  { id: "villegas", name: "Fernando Villegas #27", img: "../../Assets/Images/estampas/FernandoVillegas.png" },
-  { id: "lake", name: "Junior Lake #2", img: "../../Assets/Images/estampas/JuniorLake.png" },
-  { id: "garcia", name: "Manny García #25", img: "../../Assets/Images/estampas/MannyGarcia.png" },
-  { id: "pena", name: "Ramiro Peña #19", img: "../../Assets/Images/estampas/RamiroPena.png" },
-  { id: "cano", name: "Robinson Canó #22", img: "../../Assets/Images/estampas/RobinsonCano.png" },
-  { id: "tovar", name: "Wilfredo Tovar #7", img: "../../Assets/Images/estampas/WilfredoTovar.png" },
-  { id: "villar", name: "Jonathan Villar #6", img: "../../Assets/Images/estampas/JonathanVillar.png" }
+  { id: 1, name: "Kennys Vargas #19", img: "../../Assets/Images/estampas/KennysVargas.png" },
+  { id: 2, name: "Chris Carter #23", img: "../../Assets/Images/estampas/ChrisCarter.png" },
+  { id: 3, name: "Fernando Villegas #27", img: "../../Assets/Images/estampas/FernandoVillegas.png" },
+  { id: 4, name: "Junior Lake #2", img: "../../Assets/Images/estampas/JuniorLake.png" },
+  { id: 5, name: "Manny García #25", img: "../../Assets/Images/estampas/MannyGarcia.png" },
+  { id: 6, name: "Ramiro Peña #19", img: "../../Assets/Images/estampas/RamiroPena.png" },
+  { id: 7, name: "Robinson Canó #22", img: "../../Assets/Images/estampas/RobinsonCano.png" },
+  { id: 8, name: "Wilfredo Tovar #7", img: "../../Assets/Images/estampas/WilfredoTovar.png" },
+  { id: 9, name: "Jonathan Villar #6", img: "../../Assets/Images/estampas/JonathanVillar.png" }
 ];
 
+// 3. Estampa Suprema desbloqueable al completar la colección base
 const masterStamp = { 
-  id: "master", 
+  id: 100, 
   name: "🏆 Copa Zaachila - Leyenda LMB", 
   img: "../../Assets/Images/estampas/estampa_suprema.png" 
 };
@@ -122,7 +124,7 @@ document.getElementById('btnPrev').addEventListener('click', () => {
   }
 });
 
-document.getElementById('triviaForm').addEventListener('submit', (e) => {
+document.getElementById('triviaForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const unanswered = userAnswers.indexOf(-1);
@@ -135,41 +137,60 @@ document.getElementById('triviaForm').addEventListener('submit', (e) => {
 
   let score = 0;
   selectedQuestions.forEach((q, idx) => {
-    if (userAnswers[idx] === q.ans) {
-      score++;
-    }
+    if (userAnswers[idx] === q.ans) score++;
   });
 
-  let savedStamps = JSON.parse(localStorage.getItem('myStamps') || '[]');
-  const obtainedIds = new Set(savedStamps.map(s => s.id));
-
-  const hasAllRegularStamps = regularStamps.every(s => obtainedIds.has(s.id));
+  const idUsuario = localStorage.getItem('id_usuario') || 1;
   let earnedStamp = null;
 
-  if (hasAllRegularStamps && !obtainedIds.has(masterStamp.id)) {
-    earnedStamp = masterStamp;
-  } else {
-    const missingStamps = regularStamps.filter(s => !obtainedIds.has(s.id));
-    if (missingStamps.length > 0) {
-      earnedStamp = missingStamps[Math.floor(Math.random() * missingStamps.length)];
-    } else {
-      earnedStamp = regularStamps[Math.floor(Math.random() * regularStamps.length)];
+  // 1. Intento de persistencia mediante API Backend (MySQL)
+  try {
+    const response = await fetch('/api/estampas/desbloquear-estampa', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id_usuario: idUsuario })
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success && data.estampa) {
+        earnedStamp = data.estampa;
+      }
     }
+  } catch (err) {
+    console.warn('Servidor no disponible, ejecutando lógica local:', err);
   }
 
-  savedStamps.push(earnedStamp);
-  localStorage.setItem('myStamps', JSON.stringify(savedStamps));
+  // 2. Respaldo local si el backend no está activo
+  if (!earnedStamp) {
+    let savedStamps = JSON.parse(localStorage.getItem('myStamps') || '[]');
+    const obtainedIds = new Set(savedStamps.map(s => s.id));
+    const hasAllRegularStamps = regularStamps.every(s => obtainedIds.has(s.id));
 
+    if (hasAllRegularStamps && !obtainedIds.has(masterStamp.id)) {
+      earnedStamp = masterStamp;
+    } else {
+      const missingStamps = regularStamps.filter(s => !obtainedIds.has(s.id));
+      if (missingStamps.length > 0) {
+        earnedStamp = missingStamps[Math.floor(Math.random() * missingStamps.length)];
+      } else {
+        earnedStamp = regularStamps[Math.floor(Math.random() * regularStamps.length)];
+      }
+    }
+    savedStamps.push(earnedStamp);
+    localStorage.setItem('myStamps', JSON.stringify(savedStamps));
+  }
+
+  // 3. Renderizado de la estampa en el modal de recompensa
   document.getElementById('rewardScoreText').innerText = `Obtuviste ${score} de 5 aciertos`;
-  document.getElementById('stampName').innerText = earnedStamp.name;
+  document.getElementById('stampName').innerText = earnedStamp.nombre || earnedStamp.name;
 
   const stampImg = document.getElementById('stampImg');
   const stampFallback = document.getElementById('stampFallback');
 
-  // Activar modal primero
+  // Mostramos el modal primero para garantizar dimensiones en el DOM
   document.getElementById('rewardModal').classList.add('active');
 
-  // Asignar imagen
   if (stampImg) {
     stampImg.style.display = 'block';
     if (stampFallback) stampFallback.style.display = 'none';
@@ -179,7 +200,7 @@ document.getElementById('triviaForm').addEventListener('submit', (e) => {
       if (stampFallback) stampFallback.style.display = 'flex';
     };
 
-    stampImg.src = earnedStamp.img;
+    stampImg.src = earnedStamp.imagen_url || earnedStamp.img;
   }
 });
 

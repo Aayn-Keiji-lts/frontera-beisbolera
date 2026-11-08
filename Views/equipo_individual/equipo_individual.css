@@ -25,6 +25,9 @@ body {
   flex-direction: column;
 }
 
+/* ============================
+   NAVBAR SUPERIOR & NAVEGACIÓN MODULAR
+   ============================ */
 .navbar {
   height: 90px;
   background-color: #031842;
@@ -45,7 +48,9 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.2s ease;
 }
+
 .logo-circle:hover {
   transform: scale(1.03);
 }
@@ -79,22 +84,49 @@ body {
   color: #ffffff;
 }
 
-.logout-btn {
+button.logout-btn {
+  background: none;
+  border: none;
   color: var(--text-muted);
   font-size: 1.15rem;
-  text-decoration: none;
+  cursor: pointer;
   padding: 8px;
-  transition: color 0.2s;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease;
 }
 
-.logout-btn:hover {
+button.logout-btn:hover {
   color: #ff6b6b;
 }
 
-.mobile-menu-btn {
+.hamburger-menu {
   display: none;
+  background: none;
+  border: none;
+  color: #a8c4f0;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
+/* ============================
+   VISIBILIDAD CONDICIONAL DE SESIÓN
+   ============================ */
+.user-only,
+.guest-only {
+  display: none !important;
+}
+
+body.is-logged-in .user-only {
+  display: inline-flex !important;
+}
+
+body.is-guest .guest-only {
+  display: inline-flex !important;
+}
+
+/* ============================
+   CONTENEDOR DE LA PÁGINA Y VISTA DE EQUIPO
+   ============================ */
 .page-container {
   flex: 1;
   background-color: var(--side-cream);
@@ -286,7 +318,7 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  text-decoration: none; /* Quita subrayado */
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -334,17 +366,15 @@ body {
   justify-content: center;
 }
 
-.video-item:hover {
-  background-color: #ffffff;
-  transform: scale(1.03);
-}
-
 .footer-bar {
   height: 45px;
   background-color: var(--bg-dark);
   width: 100%;
 }
 
+/* ============================
+   RESPONSIVE MÓVIL
+   ============================ */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 16px;
@@ -354,26 +384,27 @@ body {
   .logo-circle {
     width: 65px;
     height: 65px;
-    top: 12px;
   }
 
-  .nav-links,
-  .logout-btn {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-links {
     display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #031842;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+    gap: 15px;
   }
 
-  .mobile-menu-btn {
+  .nav-links.active {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    background-color: #1452ba;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    cursor: pointer;
   }
 
   .central-banner {
@@ -423,11 +454,6 @@ body {
   .videos-grid-container {
     width: 100%;
     max-width: 340px;
-    padding: 12px;
-    gap: 10px;
-  }
-
-  .video-item {
-    height: 48px;
+    padding: 1
   }
 }

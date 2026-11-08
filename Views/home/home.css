@@ -27,7 +27,9 @@ body {
   flex-direction: column;
 }
 
-
+/* ============================
+   NAVBAR SUPERIOR & NAVEGACIÓN MODULAR
+   ============================ */
 .navbar {
   height: 90px;
   background-color: #031842;
@@ -48,7 +50,9 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  transition: transform 0.2s ease;
 }
+
 .logo-circle:hover {
   transform: scale(1.03);
 }
@@ -82,60 +86,49 @@ body {
   color: #ffffff;
 }
 
-.logout-btn {
+button.logout-btn {
+  background: none;
+  border: none;
   color: var(--text-muted);
   font-size: 1.15rem;
-  text-decoration: none;
+  cursor: pointer;
   padding: 8px;
-  transition: color 0.2s;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease;
 }
 
-.logout-btn:hover {
+button.logout-btn:hover {
   color: #ff6b6b;
 }
 
-@media (max-width: 768px) {
-  .logo-circle {
-    width: 55px;
-    height: 55px;
-  }
-}
-
-.nav-buttons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.btn {
-  text-decoration: none;
-  font-size: 15px;
-  padding: 10px 22px;
-  border-radius: 2px;
-  transition: opacity 0.2s ease, background-color 0.2s ease;
-  display: inline-block;
-}
-
-.btn-registro {
-  background-color: #0a2d74;
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
   color: #a8c4f0;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.btn-registro:hover {
-  background-color: #0d3891;
-  color: #ffffff;
+/* ============================
+   VISIBILIDAD CONDICIONAL DE SESIÓN
+   ============================ */
+.user-only,
+.guest-only {
+  display: none !important;
 }
 
-.btn-login {
-  background-color: #0b3488;
-  color: #c9dbf7;
+body.is-logged-in .user-only {
+  display: inline-flex !important;
 }
 
-.btn-login:hover {
-  background-color: #0f41aa;
-  color: #ffffff;
+body.is-guest .guest-only {
+  display: inline-flex !important;
 }
 
+/* ============================
+   CONTENEDOR CENTRAL & HISTORIA
+   ============================ */
 .page-container {
   flex: 1;
   background-color: #e8e2d8;
@@ -155,23 +148,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-.central-banner .central-image {
-  max-width: 100%;
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-.central-image {
-  width: 500px;         
-  max-width: 500px;   
-  height: auto;       
-  display: block;
-  margin: 0 auto;     
-}
-
 .lmb-logo-wrapper {
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
@@ -197,25 +175,40 @@ body {
   color: #ffffff;
 }
 
-.lmb-badge-icon {
-  font-size: 28px;
+.history-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.history-subtitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 6px;
+  margin-top: 12px;
+  text-align: left;
 }
 
 .description-text {
-  color: #ffffff;
-  font-size: 16px;
-  line-height: 1.55;
-  text-align: left;
-  letter-spacing: 0.1px;
+  color: #e2eafc;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  text-align: justify;
 }
 
-.image-container {
-  max-width: 80px;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+/* Ajuste de tamaño de la imagen central */
+.central-banner .central-image {
+  width: 320px;
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 25px auto 0 auto;
+  border-radius: 8px;
 }
-
 
 .footer-bar {
   height: 50px;
@@ -223,20 +216,39 @@ body {
   width: 100%;
 }
 
+/* ============================
+   RESPONSIVE MÓVIL
+   ============================ */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 16px;
     height: 75px;
   }
 
-  .logo-img, .logo-fallback {
+  .logo-circle {
     width: 55px;
     height: 55px;
   }
 
-  .btn {
-    font-size: 13px;
-    padding: 8px 14px;
+  .hamburger-menu {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background-color: #031842;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .central-banner {
@@ -246,5 +258,10 @@ body {
 
   .description-text {
     font-size: 14px;
+  }
+
+  .central-banner .central-image {
+    width: 100%;
+    max-width: 260px;
   }
 }

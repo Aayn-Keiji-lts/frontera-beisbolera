@@ -12,53 +12,69 @@
 </head>
 <body>
 
-
-  <header class="navbar">
-    <div class="logo-container">
-      <div class="logo-circle">
-        <img src="..\multimedia\logo-frontera-beisbolera.png" alt="Logo Frontera Beisbolera" class="logo-img">
-      </div>
-    </div>
-
-    <div class="nav-buttons">
-      <a href="..\registro\registro.html" class="btn btn-registro">Registro</a>
-      <a href="..\inicio_sesion\inicio_sesion.html" class="btn btn-login">Iniciar Sesion</a>
-      <a href="../principal_equipos/principal_equipos.html" class="nav-item">Equipos</a>
-      <a href="../minijuego/minijuego.html" class="nav-item">Minijuego</a>
-      <a href="../realidad_aumentada/realidad_aumentada.html" class="nav-item">Realidad Aumentada</a>
-      <a href="../trivias/trivias.html" class="nav-item">Trivias</a>
-      <a href="../perfil/perfil.html" class="nav-item">Perfil</a>
-    </div>
-    
-  </header>
+  <!-- Contenedor dinámico inyectado por navbar.js -->
+  <header class="navbar" id="navbar-container"></header>
 
   <main class="page-container">
     <div class="central-banner">
+      
+      <!-- LOGO LMB -->
       <div class="lmb-logo-wrapper">
-        <img src="logo-lmb.png" alt="LMB Logo" class="lmb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="lmb-badge-fallback">
+        <img 
+          src="../multimedia/logo-lmb.png" 
+          alt="LMB Logo" 
+          class="lmb-img" 
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        >
+        <div class="lmb-badge-fallback" style="display: none;">
           <div class="lmb-badge-title">Historia de la LMB</div>
         </div>
       </div>
 
-      <p class="description-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
-      </p>
-      
-      <img src="..\multimedia\historia-lmb.jpeg" alt="Imagen Central" class="central-image">
-      
-      
+      <!-- SECCIÓN HISTÓRICA DE LA LMB -->
+      <div class="history-container">
+        <h2 class="history-subtitle">Fundación y Primeros Pasos (1925)</h2>
+        <p class="description-text">
+          La Liga Mexicana de Béisbol (LMB) fue fundada en 1925 por el periodista Alejandro Aguilar Reyes «Fray Nano» y el mánager Ernesto Carmona. El torneo inaugural contó con seis equipos históricos: 7 de Mayo, México, Agraria, Nacional, Águila de Veracruz y Carmona, marcando el inicio formal del béisbol profesional en el país.
+        </p>
+
+        <img 
+        src="../../Assets/Images/historia-lmb.jpeg" 
+        alt="Historia de la LMB" 
+        class="central-image" 
+        onerror="this.src='../multimedia/historia-lmb.jpg';"
+        >
+
+        <h2 class="history-subtitle">La Era de Jorge Pasquel y la Época de Oro (1940-1950)</h2>
+        <p class="description-text">
+          Durante la década de 1940, bajo el impulso del empresario Jorge Pasquel, la LMB cobró relevancia internacional al contratar a destacadas figuras de las Ligas Negras y Grandes Ligas de Estados Unidos, como Martín Dihigo, Satchel Paige, Josh Gibson y Roy Campanella, convirtiendo a México en un epicentro del béisbol caribeño.
+        </p>
+
+        <img 
+        src="../../Assets/Images/historia-lmb-2.jpg" 
+        alt="Historia de la LMB" 
+        class="central-image" 
+        onerror="this.src='../multimedia/historia-lmb.jpg';"
+        >
+
+        <h2 class="history-subtitle">Afiliación al Béisbol Organizado (1955)</h2>
+        <p class="description-text">
+          En 1955, la LMB se integró oficialmente al Béisbol Organizado (MiLB) bajo la clasificación Clase AA, ascendiendo posteriormente a la categoría Clase AAA en 1967. Esta alianza consolidó la formación de talentos locales y el flujo constante de peloteros hacia el ámbito internacional.
+        </p>
+
+        <h2 class="history-subtitle">La LMB en la Actualidad</h2>
+        <p class="description-text">
+          Con un siglo de tradición deportiva, la liga cuenta actualmente con 20 franquicias divididas en dos zonas (Norte y Sur). La LMB es el circuito veraniego de béisbol profesional más antiguo de México y un pilar fundamental en la identidad deportiva nacional.
+        </p>
+      </div>
 
     </div>
   </main>
 
   <footer class="footer-bar"></footer>
+
+  <!-- Script que inyecta la navbar e inicia el control de sesión -->
+  <script src="../../components/navbar.js"></script>
 
 </body>
 </html>
