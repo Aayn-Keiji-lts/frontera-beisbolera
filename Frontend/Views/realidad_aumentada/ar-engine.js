@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 1. Configuración principal de MindAR
     const mindarThree = new MindARThree({
   container: document.querySelector("#ar-container"),
-  imageTargetSrc: "../../Assets/Escudos2.mind", // Tu nuevo archivo compilado múltiple
+  imageTargetSrc: "Frontend/Assets/Escudos2.mind", // Tu nuevo archivo compilado múltiple Frontend/Components/navbar.css
   uiScanning: "no"
 });
 
@@ -107,7 +107,7 @@ btnCerrarInfo.addEventListener('click', () => {
 const gltfLoader = new GLTFLoader();
 
 // 2. Cargar el modelo para el Escudo 0 (Sultanes)
-gltfLoader.load('../../Assets/Modelos/Jocho3.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Jocho3.glb', (gltf) => {
   const modeloAcereros = gltf.scene;
   modeloAcereros.scale.set(0.3, 0.3, 0.3); 
   anchorAcereros.group.add(modeloAcereros); // Se pega al ancla 0
@@ -128,7 +128,7 @@ gltfLoader.load('../../Assets/Modelos/Jocho3.glb', (gltf) => {
 });
 
 // 3. Cargar el modelo para el Escudo 1 (Ej. Dorados)
-gltfLoader.load('../../Assets/Modelos/GuanteNLA2.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/GuanteNLA2.glb', (gltf) => {
   const modeloDorados = gltf.scene;
   modeloDorados.scale.set(0.5, 0.5, 0.5); 
   anchorDorados.group.add(modeloDorados); // Se pega al ancla 1
@@ -148,7 +148,7 @@ gltfLoader.load('../../Assets/Modelos/GuanteNLA2.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/GorraBebida1.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/GorraBebida1.glb', (gltf) => {
   const  modeloCaliente= gltf.scene;
   modeloCaliente.scale.set(0.7, 0.7, 0.7); 
   anchorCaliente.group.add(modeloCaliente); // Se pega al ancla 1
@@ -169,7 +169,7 @@ gltfLoader.load('../../Assets/Modelos/GorraBebida1.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/Bate.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Bate.glb', (gltf) => {
   const modeloCharros = gltf.scene;
   modeloCharros.scale.set(0.3, 0.3, 0.3); 
   anchorCharros.group.add(modeloCharros); // Se pega al ancla 1
@@ -189,7 +189,7 @@ gltfLoader.load('../../Assets/Modelos/Bate.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/Gorra.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Gorra.glb', (gltf) => {
   const modeloRieleros = gltf.scene;
   modeloRieleros.scale.set(0.5, 0.5, 0.5); 
   anchorRieleros.group.add(modeloRieleros); // Se pega al ancla 1
@@ -209,7 +209,7 @@ gltfLoader.load('../../Assets/Modelos/Gorra.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/DedoEspuma.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/DedoEspuma.glb', (gltf) => {
   const modeloSaraperos = gltf.scene;
   modeloSaraperos.scale.set(0.1, 0.1, 0.1); 
   anchorSaraperos.group.add(modeloSaraperos); // Se pega al ancla 1
@@ -230,7 +230,7 @@ gltfLoader.load('../../Assets/Modelos/DedoEspuma.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/Bateador_V2.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Bateador_V2.glb', (gltf) => {
   const modeloSultanes = gltf.scene;
   modeloSultanes.scale.set(0.3, 0.3, 0.3); 
   anchorSultanes.group.add(modeloSultanes); // Se pega al ancla 1
@@ -250,7 +250,7 @@ gltfLoader.load('../../Assets/Modelos/Bateador_V2.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/Catcher1.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Catcher1.glb', (gltf) => {
   const modeloTecolotes = gltf.scene;
   modeloTecolotes.scale.set(0.3, 0.3, 0.3); 
   anchorTecolotes.group.add(modeloTecolotes); // Se pega al ancla 1
@@ -270,7 +270,7 @@ gltfLoader.load('../../Assets/Modelos/Catcher1.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/Lanzador_V2.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Lanzador_V2.glb', (gltf) => {
   const modeloToros = gltf.scene;
   modeloToros.scale.set(0.3, 0.3, 0.3); 
   anchorToros.group.add(modeloToros); // Se pega al ancla 1
@@ -290,7 +290,7 @@ gltfLoader.load('../../Assets/Modelos/Lanzador_V2.glb', (gltf) => {
 
 });
 
-gltfLoader.load('../../Assets/Modelos/Pelota.glb', (gltf) => {
+gltfLoader.load('Frontend/Assets/Modelos/Pelota.glb', (gltf) => {
   const modeloAlgodoneros = gltf.scene;
   modeloAlgodoneros.scale.set(0.1, 0.1, 0.1); 
   anchorAlgodoneros.group.add(modeloAlgodoneros); // Se pega al ancla 1

@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resultado = "¡STRIKE!";
       colorMsj = "#ff0000";
       strikes++;
+      puntos -= 10;
       
       audioStrike.play(); // Sonido de abucheo
       contAnimacion.classList.add('anim-strike'); // Pelota pasa de largo
