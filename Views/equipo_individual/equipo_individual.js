@@ -41,112 +41,114 @@ const equiposData = {
       }
     ],
     videos: [
-      { titulo: "¡La jugada del décimo título!", archivo: "../../Assets/Videos/La_jugada_del_décimo_título.mp4" },
-      { titulo: "Ramirez captura el tercer out con gran atrapada", archivo: "../../Assets/Videos/Ramirez_tercer_out.mp4" },
-      { titulo: "Ortega retira el tercer out por la vía del ponche ", archivo: "../../Assets/Videos/Ortega_tercer_out.mp4" },
-      { titulo: "Bañuelos retira el tercer out por la vía del ponche ", archivo: "../../Assets/Videos/Bañuelos_tercer_out.mp4" },
-      { titulo: "Bañuelos retira el tercer out por la vía del ponche ", archivo: "../../Assets/Videos/Bañuelos_tercer_ponche.mp4" },
+      { titulo: "¡La jugada del décimo título!", archivo: "../../Assets/Videos/sultanes/La_jugada_del_décimo_título.mp4" },
+      { titulo: "Ramirez captura el tercer out con gran atrapada", archivo: "../../Assets/Videos/sultanes/Ramirez_tercer_out.mp4" },
+      { titulo: "Ortega retira el tercer out por la vía del ponche ", archivo: "../../Assets/Videos/sultanes/Ortega_tercer_out.mp4" },
+      { titulo: "Bañuelos retira el tercer out por la vía del ponche ", archivo: "../../Assets/Videos/sultanes/Bañuelos_tercer_out.mp4" },
+      { titulo: "Bañuelos retira el tercer out por la vía del ponche ", archivo: "../../Assets/Videos/sultanes/Bañuelos_tercer_ponche.mp4" },
       { titulo: "Video 6", archivo: "../../Assets/Videos/Video_6.mp4" }
     ]
   },
-  diablos: {
-    nombre: "Diablos Rojos del México",
-    logo: "../../Assets/Images/logos-equipos/diablos-logo.png",
-    fallback: "MEX",
-    descripcion: "Los Diablos Rojos del México son una de las franquicias más laureadas y representativas del béisbol mexicano, con sede en el Estadio Alfredo Harp Helú.",
+  caliente: {
+    nombre: "Caliente de Durango",
+    logo: "../../Assets/Images/logos-equipos/caliente-logo.png",
+    fallback: "DUR",
+    descripcion: "La franquicia más reciente de la Zona Norte, incorporada en 2024 para encender la pasión por el béisbol en Durango.",
     momento: {
-      titulo: "DIABLOS ROJOS DEL MÉXICO CORONA AÑO MÁGICO CON SU TÍTULO NÚMERO 17",
-      imagen: "../../Assets/Images/Diablos_campeonato_17.jpg",
-      pie: "",
-      fecha: "-9 de septiembre de 2024"
+      titulo: "Caliente de Durango sorprende en debut",
+      imagen: "../../Assets/Images/debut-caliente-durango.jpeg",
+      pie: "El nuevo equipo de la entidad, Caliente de Durango, hizo su debut en la Liga Mexicana de Béisbol",
+      fecha: "-13 de Abril del 2024"
     },
     estadisticas: [
       {
         categoria: "BATEO",
-        subtitulo: "Mas carreras producidas",
+        subtitulo: "Hits conectados",
         filas: [
-          { jugador: "1. J. Pirela", valor: "78" },
-          { jugador: "2. R. Canó", valor: "77" },
-          { jugador: "3. J. Gamboa", valor: "56" }
+          { jugador: "1. A. García", valor: "78" },
+          { jugador: "2. M. Robles", valor: "71" },
+          { jugador: "3. L. Silva", valor: "64" }
         ]
       },
       {
         categoria: "PITCHEO",
-        subtitulo: "Mayor nuemro de ponches",
+        subtitulo: "Ponches recetados",
         filas: [
-          { jugador: "1. T. Bauer", valor: "120" },
-          { jugador: "2. E. Leal", valor: "74" },
-          { jugador: "3. R. Pinto", valor: "58" }
+          { jugador: "1. R. Cruz", valor: "62" },
+          { jugador: "2. E. Valenzuela", valor: "55" },
+          { jugador: "3. J. Vargas", valor: "48" }
         ]
       },
       {
         categoria: "FILDEO",
-        subtitulo: "Porcentaje de carreras limpias más alto",
+        subtitulo: "Outs concretados en jardines",
         filas: [
-          { jugador: "1. T. Bauer", valor: "2.48" },
-          { jugador: "2. E. Leal", valor: "2.92" },
-          { jugador: "3. R. Pinto", valor: "3.20" }
+          { jugador: "1. D. Ortiz", valor: "110" },
+          { jugador: "2. J. Pérez", valor: "98" },
+          { jugador: "3. H. Gómez", valor: "85" }
         ]
       }
     ],
     videos: [
-      { titulo: "¡Último out y Diablos es líder absoluto del Standing LMB 2026!", archivo: "../../Assets/Videos/Diablos_campeon_2026.mp4" },
-      { titulo: "Diablos concreta la doble matanza", archivo: "../../Assets/Videos/Diablos_doble_matanza.mp4" },
-      { titulo: "Diablos ejecuta doble play para colgar el cero", archivo: "../../Assets/Videos/Diablos_doble_play.mp4" },
-      { titulo: "Elevado de Alcantara para el final del juego", archivo: "../../Assets/Videos/Elevado_de_Alcantara.mp4" },
-      { titulo: "Imparable de Franklin Barreto; entra la carrera 11", archivo: "../../Assets/Videos/Imparable_Franklin_carrera_11.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "Webster Rivas anota la sexta carrera", archivo: "../../Assets/Videos/caliente/webster_rivas_sexta_carrera.mp4" },
+      { titulo: "Imparable productor de Drew Stankiewicz", archivo: "../../Assets/Videos/caliente/imparable_drew.mp4" },
+      { titulo: "Daniel Johnson asegura la esférica para el primer out", archivo: "../../Assets/Videos/caliente/daniel_johnson_esferica.mp4" },
+      { titulo: "Estevan Florial conecta jonrón de dos carreras", archivo: "../../Assets/Videos/caliente/estevan_florial_jonron_dos_carreras.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/caliente/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/caliente/video6.mp4" }
     ]
   },
-  tigres: {
-    nombre: "Tigres de Quintana Roo",
-    logo: "../../Assets/Images/logos-equipos/tigres-logo.png",
-    fallback: "TIG",
-    descripcion: "Los Tigres de Quintana Roo, anteriormente Tigres capitalinos, cuentan con una larga y gloriosa tradición en el circuito de verano.",
+
+  charros: {
+    nombre: "Charros de Jalisco",
+    logo: "../../Assets/Images/logos-equipos/charros-logo.png",
+    fallback: "JAL",
+    descripcion: "Equipo emblemático fundado en 1949 con sede en Zapopan, Jalisco, representante de la elegancia y tradición tapatía.",
     momento: {
-      titulo: "La Garra Felina",
-      imagen: "../../Assets/Images/70_tigres.jpeg",
-      pie: "Cierre perfecto para coronarse campeones",
-      fecha: "-10 de Abril del 2025"
+      titulo: "Charros de Jalisco es campeon de la Liga Mexicana del Pacífico 2025",
+      imagen: "../../Assets/Images/charros-campeon-liga-mexicana-pacifico.jpg",
+      pie: "Charros de Jalisco se consagra campeón de la Liga Mexicana del Pacífico",
+      fecha: "-29 de Mayo del 2025"
     },
     estadisticas: [
       {
         categoria: "BATEO",
-        subtitulo: "Mas carreras producidas",
+        subtitulo: "Bases por bolas recibidas",
         filas: [
-          { jugador: "1. A. Rodríguez", valor: "54" },
-          { jugador: "2. A. Wilson", valor: "48" },
-          { jugador: "3. E. Barrera", valor: "42" }
+          { jugador: "1. J. Aguilar", valor: "42" },
+          { jugador: "2. M. Serna", valor: "38" },
+          { jugador: "3. R. Castro", valor: "35" }
         ]
       },
       {
         categoria: "PITCHEO",
-        subtitulo: "Mayor nuemro de ponches",
+        subtitulo: "Juegos ganados",
         filas: [
-          { jugador: "1. R. Carrillo", valor: "71" },
-          { jugador: "2. C. De Paula", valor: "64" },
-          { jugador: "3. E. Valenzuela", valor: "55" }
+          { jugador: "1. L. Mendoza", valor: "9" },
+          { jugador: "2. O. Félix", valor: "7" },
+          { jugador: "3. A. Solís", valor: "6" }
         ]
       },
       {
-        categoria: "Fildeo",
-        subtitulo: "Prcentaje de fildeo más alto",
+        categoria: "FILDEO",
+        subtitulo: "Asistencias en el cuadro",
         filas: [
-          { jugador: "1. R. Carrillo", valor: "3.45" },
-          { jugador: "2. C. De Paula", valor: "3.90" },
-          { jugador: "3. B. Arredondo", valor: "4.15" }
+          { jugador: "1. A. Rodríguez", valor: "145" },
+          { jugador: "2. E. Rivera", valor: "130" },
+          { jugador: "3. G. Gutiérrez", valor: "112" }
         ]
       }
     ],
     videos: [
-      { titulo: "Defensiva bengalí concreta doble play", archivo: "../../Assets/Videos/Defensiva_bengalí_concreta_dobleplay.mp4" },
-      { titulo: "Ponche de Henry Sosa para el tercer out", archivo: "../../Assets/Videos/Henry_Sosa_tercer_out.mp4" },
-      { titulo: "Aldo Flores asegura el elevado para el tercer out", archivo: "../../Assets/Videos/Aldo_Flores_elevado.mp4" },
-      { titulo: "Tras wildpitch; Julián Ornelas timbra la de la quiniela", archivo: "../../Assets/Videos/Julian_Ornelas_quiniela.mp4" },
-      { titulo: "Video 5", archivo: "../../Assets/Videos/video5.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "Ponche de Emerson Martínez para el primer out", archivo: "../../Assets/Videos/charros/ponche_emerson_martinez.mp4" },
+      { titulo: "César Gómez retira el tercer out por la vía del ponche", archivo: "../../Assets/Videos/charros/cesar_gomez_tercer_out.mp4" },
+      { titulo: "Imparable productor de José Herrera", archivo: "../../Assets/Videos/charros/imparable_productor_jose_herrera.mp4" },
+      { titulo: "Elevado de Walsh; Wielansky timbra en pisa y corre", archivo: "../../Assets/Videos/charros/elevado_walsh_wielansky.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/charros/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/charros/video6.mp4" }
     ]
   },
+  
   toros: {
     nombre: "Toros de Tijuana",
     logo: "../../Assets/Images/logos-equipos/toros-logo.png",
@@ -188,61 +190,61 @@ const equiposData = {
       }
     ],
     videos: [
-      { titulo: "En el guante de Junior Lake el out 27, Toros campeón", archivo: "../../Assets/Videos/En_el_guante_de_Junior_Lake_el_out_27_Toros_campeón.mp4" },
-      { titulo: "Ramírez saca el ponche; a tres outs de la victoria", archivo: "../../Assets/Videos/Ramírez_ponche_victoria.mp4" },
-      { titulo: "Pérez se lanza y tira a primera para el tercer out", archivo: "../../Assets/Videos/Pérez_tercer_out.mp4" },
-      { titulo: "Seth Beer hace swing y cae el tercer out", archivo: "../../Assets/Videos/Seth_Beer_tercer_out.mp4" },
-      { titulo: "Video 5", archivo: "../../Assets/Videos/video5.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "En el guante de Junior Lake el out 27, Toros campeón", archivo: "../../Assets/Videos/toros/En_el_guante_de_Junior_Lake_el_out_27_Toros_campeón.mp4" },
+      { titulo: "Ramírez saca el ponche; a tres outs de la victoria", archivo: "../../Assets/Videos/toros/Ramírez_ponche_victoria.mp4" },
+      { titulo: "Pérez se lanza y tira a primera para el tercer out", archivo: "../../Assets/Videos/toros/Pérez_tercer_out.mp4" },
+      { titulo: "Seth Beer hace swing y cae el tercer out", archivo: "../../Assets/Videos/toros/Seth_Beer_tercer_out.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/toros/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/toros/video6.mp4" }
     ]
   },
-  leones: {
-    nombre: "Leones de Yucatán",
-    logo: "../../Assets/Images/logos-equipos/leones-logo.png",
-    fallback: "YUC",
-    descripcion: "Los Leones de Yucatán son los reyes de la Zona Sur, reconocidos por su excelente pitcheo y su apasionada afición en Mérida.",
+  tecolotes: {
+    nombre: "Tecolotes de los Dos Laredos",
+    logo: "../../Assets/Images/logos-equipos/tecolotes-logo.png",
+    fallback: "LAR",
+    descripcion: "Único equipo profesional binacional del béisbol mundial, fundado en 1940, jugando entre Nuevo Laredo (Tamaulipas) y Laredo (Texas).",
     momento: {
-      titulo: "66 Años de Leones en MLB",
-      imagen: "../../Assets/Images/66_de_leones.jpg",
-      pie: "",
-      fecha: "-16 de Abril del 2020"
+      titulo: "Campones de la copa gobernador 2025",
+      imagen: "../../Assets/Images/Tecolotes-ganan-la-Copa-Gobernador-tras-un-gran-duelo-de-pitcheo.jpg",
+      pie: "Tecolotes ganan la Copa Gobernador tras un gran duelo de pitcheo",
+      fecha: "-20 de Abril del 2025"
     },
     estadisticas: [
       {
         categoria: "BATEO",
-        subtitulo: "Mas carreras producidas",
+        subtitulo: "Bases totales",
         filas: [
-          { jugador: "1. A. Charles", valor: "72" },
-          { jugador: "2. Y. Drake", valor: "65" },
-          { jugador: "3. L. Juárez", valor: "58" }
+          { jugador: "1. K. Gatewood", valor: "142" },
+          { jugador: "2. B. Flete", valor: "128" },
+          { jugador: "3. Y. Drake", valor: "115" }
         ]
       },
       {
         categoria: "PITCHEO",
-        subtitulo: "Mayor número de ponches",
+        subtitulo: "WHIP",
         filas: [
-          { jugador: "1. C. Thompson", valor: "82" },
-          { jugador: "2. Y. Negrín", valor: "75" },
-        { jugador: "3. F. Doubront", valor: "69" }
+          { jugador: "1. R. Barrón", valor: "1.10" },
+          { jugador: "2. N. Antone", valor: "1.18" },
+          { jugador: "3. G. Broussard", valor: "1.25" }
         ]
       },
       {
         categoria: "FILDEO",
-        subtitulo: "Porcentaje de fildeo más alto",
+        subtitulo: "Porcentaje de fildeo en el infield",
         filas: [
-          { jugador: "1. Y. Negrín", valor: "2.75" },
-          { jugador: "2. C. Thompson", valor: "3.05" },
-          { jugador: "3. F. Doubront", valor: "3.30" }
+          { jugador: "1. A. Harris", valor: ".988" },
+          { jugador: "2. L. Jiménez", valor: ".982" },
+          { jugador: "3. R. Valenzuela", valor: ".976" }
         ]
       }
     ],
     videos: [
-      { titulo: "Oliver Carrillo desempata con cuadrangular solitario", archivo: "../../Assets/Videos/Oliver_Carrillo_desempata.mp4" },
-      { titulo: "Marco Jaime timbra la carrera del desempate", archivo: "../../Assets/Videos/Marco_Jaime_desempate.mp4" },
-      { titulo: "Reivaj García suma una rayita con sencillo productor", archivo: "../../Assets/Videos/Reivaj_García_sencillo.mp4" },
-      { titulo: "Ichiro Rodriguez pega de hit y entra una carrera más", archivo: "../../Assets/Videos/Ichiro_Rodriguez_hit.mp4" },
-      { titulo: "Video 5", archivo: "../../Assets/Videos/video5.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "Yonny Hernández con elevado para el out final", archivo: "../../Assets/Videos/tecolotes/yonny_hernandez_elevado_out_final.mp4" },
+      { titulo: "Jonrón de tres carreras de Zoilo Almonte", archivo: "../../Assets/Videos/tecolotes/jonron_zoilo_almonte.mp4" },
+      { titulo: "Miles Simington pega jonrón solitario", archivo: "../../Assets/Videos/tecolotes/miles_simington_jonron_solitario.mp4" },
+      { titulo: "Drew Parrish consigue el ponche con casa llena", archivo: "../../Assets/Videos/tecolotes/drew_parrish_ponche_casa_llena.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/tecolotes/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/tecolotes/video6.mp4" }
     ]
   },
   acereros: {
@@ -286,12 +288,12 @@ const equiposData = {
       }
     ],
     videos: [
-      { titulo: "Cuadrangular solitario de Rodolfo Amador", archivo: "../../Assets/Videos/Cuadrangular_solitario_de_Rodolfo_Amador.mp4" },
-      { titulo: "Márquez controla rodado y tira a la inicial para el tercer out", archivo: "../../Assets/Videos/Márquez_tercer_out.mp4" },
-      { titulo: "Andretty Cordero anota la segunda carrera para Acereros", archivo: "../../Assets/Videos/Andretty_Cordero_segunda_carrera.mp4" },
-      { titulo: "Video 4", archivo: "../../Assets/Videos/video4.mp4" },
-      { titulo: "Video 5", archivo: "../../Assets/Videos/video5.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "Cuadrangular solitario de Rodolfo Amador", archivo: "../../Assets/Videos/asereros/Cuadrangular_solitario_de_Rodolfo_Amador.mp4" },
+      { titulo: "Márquez controla rodado y tira a la inicial para el tercer out", archivo: "../../Assets/Videos/asereros/Márquez_tercer_out.mp4" },
+      { titulo: "Andretty Cordero anota la segunda carrera para Acereros", archivo: "../../Assets/Videos/asereros/Andretty_Cordero_segunda_carrera.mp4" },
+      { titulo: "Video 4", archivo: "../../Assets/Videos/asereros/video4.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/asereros/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/asereros/video6.mp4" }
     ]
   },
   algodoneros: {
@@ -335,61 +337,109 @@ const equiposData = {
       }
     ],
     videos: [
-      { titulo: "Algodoneros derrota en casa a los Rieleros", archivo: "../../Assets/Videos/Algodoneros_derrota_en_casa_a_Rieleros.mp4" },
-      { titulo: "Elevado de Nick Torres; Adrián Tovalín timbra", archivo: "../../Assets/Videos/Elevado_Nick_Torres_Adrián_Tovalín_timbra.mp4" },
-      { titulo: "Ryan Hendrix retira el tercer out por la vía del ponche", archivo: "../../Assets/Videos/Ryan_Hendrix_tercer_out.mp4" },
-      { titulo: "Mason Martin produce la quinta carrera", archivo: "../../Assets/Videos/Mason_Martin_quinta_carrera.mp4" },
-      { titulo: "Julián Escobedo se desliza y completa el out", archivo: "../../Assets/Videos/Julián_Escobedo_desliz.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "Algodoneros derrota en casa a los Rieleros", archivo: "../../Assets/Videos/algodoneros/Algodoneros_derrota_en_casa_a_Rieleros.mp4" },
+      { titulo: "Elevado de Nick Torres; Adrián Tovalín timbra", archivo: "../../Assets/Videos/algodoneros/Elevado_Nick_Torres_Adrián_Tovalín_timbra.mp4" },
+      { titulo: "Ryan Hendrix retira el tercer out por la vía del ponche", archivo: "../../Assets/Videos/algodoneros/Ryan_Hendrix_tercer_out.mp4" },
+      { titulo: "Mason Martin produce la quinta carrera", archivo: "../../Assets/Videos/algodoneros/Mason_Martin_quinta_carrera.mp4" },
+      { titulo: "Julián Escobedo se desliza y completa el out", archivo: "../../Assets/Videos/algodoneros/Julián_Escobedo_desliz.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/algodoneros/video6.mp4" }
     ]
-  },
-  pericos: {
-    nombre: "Pericos de Puebla",
-    logo: "../../Assets/Images/logos-equipos/pericos-logo.png",
-    fallback: "PUE",
-    descripcion: "Los Pericos de Puebla han destacado como uno de los equipos más competitivos del país, con múltiples campeonatos de la LMB.",
+  },rieleros: {
+    nombre: "Rieleros de Aguascalientes",
+    logo: "../../Assets/Images/logos-equipos/rieleros-logo.png",
+    fallback: "AGS",
+    descripcion: "La Máquina Pitahaya de Aguascalientes, fundada en 1975, es un equipo caracterizado por su combatividad y juego explosivo.",
     momento: {
-      titulo: "Pericos de puebla campeones serie rey 2023",
-      imagen: "../../Assets/Images/pericos-puebla-campeones-serie-rey-2023.jpg",
-      pie: "",
-      fecha: "-15 de septiembre del 2023"
+      titulo: "La histórica coronación de Rieleros en 2012",
+      imagen: "../../Assets/Images/rieleros-campeones.jpeg",
+      pie: "Rieleros campones de la zona norte",
+      fecha: "-27 de Agosto del 2012"
     },
     estadisticas: [
       {
         categoria: "BATEO",
-        subtitulo: "Mas carreras producidas",
+        subtitulo: "Slugging (SLG)",
         filas: [
-          { jugador: "1. P. O'Brien", valor: "73" },
-          { jugador: "2. C. Adames", valor: "67" },
-          { jugador: "3. D. Ortiz", valor: "55" }
+          { jugador: "1. A. Murillo", valor: ".580" },
+          { jugador: "2. R. Reyes", valor: ".540" },
+          { jugador: "3. M. Cornejo", valor: ".495" }
         ]
       },
       {
         categoria: "PITCHEO",
-        subtitulo: "Mayor número de ponches",
+        subtitulo: "Holds",
         filas: [
-          { jugador: "1. G. Ynoa", valor: "85" },
-          { jugador: "2. Y. Santos", valor: "73" },
-          { jugador: "3. F. Haro", valor: "60" }
+          { jugador: "1. I. Arballo", valor: "14" },
+          { jugador: "2. R. Corcoran", valor: "10" },
+          { jugador: "3. F. Villegas", valor: "8" }
         ]
       },
       {
         categoria: "FILDEO",
-        subtitulo: "Porcentaje de fildeo más alto",
+        subtitulo: "Porcentaje de fildeo",
         filas: [
-          { jugador: "1. Y. Santos", valor: "2.70" },
-          { jugador: "2. G. Ynoa", valor: "3.18" },
-          { jugador: "3. A. Preciado", valor: "3.40" }
+          { jugador: "1. E. Cordero", valor: ".991" },
+          { jugador: "2. O. Piña", valor: ".988" },
+          { jugador: "3. L. Medina", valor: ".980" }
         ]
       }
     ],
     videos: [
-      { titulo: "Lorenzo Cedrola llega al plato en pisa y corre", archivo: "../../Assets/Videos/Lorenzo_Cedrola_plato_pisa_corre.mp4" },
-      { titulo: "Samar Leyva suma una rayita con cuadrangular", archivo: "../../Assets/Videos/Samar_Leyva_cuadrangular.mp4" },
-      { titulo: "Wild pitch permite la entrada de la sexta carrera de Pericos", archivo: "../../Assets/Videos/Wild_pitch_pericos.mp4" },
-      { titulo: "Doblete de Sebastián Elizalde suma la quinta carrera", archivo: "../../Assets/Videos/Doblete_Sebastián_Elizalde_quinta_carrera.mp4" },
-      { titulo: "Video 5", archivo: "../../Assets/Videos/video5.mp4" },
-      { titulo: "Video 6", archivo: "../../Assets/Videos/video6.mp4" }
+      { titulo: "Jonrón de dos carreras de Matt McDermott", archivo: "../../Assets/Videos/rieleros/jonron_dos_carreras_matt_mcdermott.mp4" },
+      { titulo: "Carlos Mendivil remolca par de carreras ", archivo: "../../Assets/Videos/rieleros/carlos_mendivil_remolca_par_carreras.mp4" },
+      { titulo: "Matt McDermott anota la segunda carrera", archivo: "../../Assets/Videos/rieleros/matt_mcdermott_segunda_carrera.mp4" },
+      { titulo: "Gabriel Noriega anota tras sencillo de Rodríguez`", archivo: "../../Assets/Videos/rieleros/gabriel_noriega_sencillo_rodriguez.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/rieleros/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/rieleros/video6.mp4" }
+    ]
+  },
+  dorados: {
+    nombre: "Dorados de Chihuahua",
+    logo: "../../Assets/Images/logos-equipos/dorados-logo.png",
+    fallback: "CHI",
+    descripcion: "La franquicia más antigua de la Zona Norte, fundada en 1936 en Chihuahua, Chihuahua, cuna de grandes peloteros.",
+    momento: {
+      titulo: "Dorados de Chihuahua regresa a la LMB",
+      imagen: "../../Assets/Images/Dorados-LMB.jpg",
+      pie: "Despues de 14 años, el Estadio Monumental de Chihuahua vuelve a vibrar con el béisbol veraniego",
+      fecha: "-21 de Diciembre del 2023"
+    },
+    estadisticas: [
+      {
+        categoria: "BATEO",
+        subtitulo: "Bases robadas",
+        filas: [
+          { jugador: "1. C. Valenzuela", valor: "16" },
+          { jugador: "2. F. Peguero", valor: "12" },
+          { jugador: "3. J. Silva", valor: "10" }
+        ]
+      },
+      {
+        categoria: "PITCHEO",
+        subtitulo: "Entradas lanzadas",
+        filas: [
+          { jugador: "1. A. Delgado", valor: "95.2" },
+          { jugador: "2. G. Reyes", valor: "88.0" },
+          { jugador: "3. M. Preciado", valor: "76.1" }
+        ]
+      },
+      {
+        categoria: "FILDEO",
+        subtitulo: "Putouts (Outs realizados)",
+        filas: [
+          { jugador: "1. H. Urrutia", valor: "380" },
+          { jugador: "2. J. Martínez", valor: "210" },
+          { jugador: "3. R. Orozco", valor: "175" }
+        ]
+      }
+    ],
+    videos: [
+      { titulo: "Sencillo de Joel Flores y entra la sexta carrera", archivo: "../../Assets/Videos/dorados/sencillo_joel_flores.mp4" },
+      { titulo: "Joel Flores produce la cuarta carrera", archivo: "../../Assets/Videos/dorados/joel_flores_cuarta_carrera.mp4" },
+      { titulo: "Wild pitch y anota Coco Montes ", archivo: "../../Assets/Videos/dorados/wild_pitch_coco_montes.mp4" },
+      { titulo: "Coco Montes llega al plato con rodado de out", archivo: "../../Assets/Videos/dorados/coco_montes_rodado_out.mp4" },
+      { titulo: "Video 5", archivo: "../../Assets/Videos/dorados/video5.mp4" },
+      { titulo: "Video 6", archivo: "../../Assets/Videos/dorados/video6.mp4" }
     ]
   },
   saraperos: {
@@ -433,12 +483,12 @@ const equiposData = {
       }
     ],
     videos: [
-      { titulo: "Mallex Smith detona su primer cuadrangular en la LMB", archivo: "../../Assets/Videos/Mallex_Smith_primer_cuadrangular_LMB.mp4" },
-      { titulo: "El venezolano José Peraza atizó par de cuadrangulares", archivo: "../../Assets/Videos/Jose_Peraza_dos_cuadras.mp4" },
-      { titulo: "Cuarto cuadrangular de Bobby Bradley con Saraperos", archivo: "../../Assets/Videos/Cuarto_cuadrangular_de_Bobby_Bradley_con_Saraperos.mp4" },
-      { titulo: "Atrapadon de Alex Mejía", archivo: "../../Assets/Videos/Alex_Mejía_atrapadon.mp4" },
-      { titulo: "Grand Slam de Missael Rivera con Saraperos de Saltillo", archivo: "../../Assets/Videos/Grand_Slam_Missael_Rivera.mp4" },
-      { titulo: "Out en home para terminar la entrada", archivo: "../../Assets/Videos/Out_en_home_para_terminar_la_entrada.mp4" }
+      { titulo: "Mallex Smith detona su primer cuadrangular en la LMB", archivo: "../../Assets/Videos/saraperos/Mallex_Smith_primer_cuadrangular_LMB.mp4" },
+      { titulo: "El venezolano José Peraza atizó par de cuadrangulares", archivo: "../../Assets/Videos/saraperos/Jose_Peraza_dos_cuadras.mp4" },
+      { titulo: "Cuarto cuadrangular de Bobby Bradley con Saraperos", archivo: "../../Assets/Videos/saraperos/Cuarto_cuadrangular_de_Bobby_Bradley_con_Saraperos.mp4" },
+      { titulo: "Atrapadon de Alex Mejía", archivo: "../../Assets/Videos/saraperos/Alex_Mejía_atrapadon.mp4" },
+      { titulo: "Grand Slam de Missael Rivera con Saraperos de Saltillo", archivo: "../../Assets/Videos/saraperos/Grand_Slam_Missael_Rivera.mp4" },
+      { titulo: "Out en home para terminar la entrada", archivo: "../../Assets/Videos/saraperos/Out_en_home_para_terminar_la_entrada.mp4" }
     ]
   }
 };
