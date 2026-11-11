@@ -1,45 +1,264 @@
-// 1. Banco de 40 preguntas sobre la Liga Mexicana de Béisbol (LMB)
 const questionBank = [
-  { q: "¿Cuál equipo ostenta más campeonatos en la historia de la LMB?", opts: ["Diablos Rojos del México", "Tigres de Quintana Roo", "Sultanes de Monterrey", "Leones de Yucatán"], ans: 0 },
-  { q: "¿En qué año se fundó la Liga Mexicana de Béisbol?", opts: ["1925", "1938", "1946", "1910"], ans: 0 },
-  { q: "¿Quién fundó la LMB junto con Alejandro Aguilar Reyes 'Nano'?", opts: ["Ernesto Carmona", "Jorge Pasquel", "Pleyo González", "Alejandro Aguilar"], ans: 0 },
-  { q: "¿Cuál es la sede de los Sultanes de Monterrey?", opts: ["Estadio Mobil Super", "Estadio Alfredo Harp Helú", "Estadio Monclova", "Estadio Revolución"], ans: 0 },
-  { q: "¿Qué trofeo se le entrega al campeón de la LMB?", opts: ["Copa Zaachila", "Copa Azteca", "Trofeo LMB", "Copa Gobernador"], ans: 0 },
-  { q: "¿Cómo se llama el estadio de los Diablos Rojos del México inaugurado en 2019?", opts: ["Alfredo Harp Helú", "Foro Sol", "Parque Delta", "Parque Seguro Social"], ans: 0 },
-  { q: "¿Qué equipo representa a la Comarca Lagunera?", opts: ["Algodoneros Unión Laguna", "Acereros de Monclova", "Saraperos de Saltillo", "Rieleros de Aguascalientes"], ans: 0 },
-  { q: "¿Qué apodo recibe el equipo de Puebla?", opts: ["Pericos", "Loros", "Águilas", "Tucanes"], ans: 0 },
-  { q: "¿En qué ciudad juegan los Saraperos?", opts: ["Saltillo", "Monclova", "Torreón", "Chihuahua"], ans: 0 },
-  { q: "¿Qué multimillonario e impulsor trajo grandes estrellas ligamayoristas a la LMB en los años 40?", opts: ["Jorge Pasquel", "Alejandro Harp", "Carlos Slim", "Alfredo Harp"], ans: 0 },
-  { q: "¿Cuál es el apodo tradicional de los Tigres?", opts: ["Los Felinos", "Los Escarlatas", "Los Fantasmas Grises", "Los Árboles"], ans: 0 },
-  { q: "¿Cómo se les conoce históricamente a los Sultanes de Monterrey?", opts: ["Los Fantasmas Grises", "Los Melenudos", "Los Belicosos", "Los Espaciales"], ans: 0 },
-  { q: "¿En qué estado juegan los Olmecas?", opts: ["Tabasco", "Campeche", "Yucatán", "Veracruz"], ans: 0 },
-  { q: "¿Qué equipo juega en Mérida, Yucatán?", opts: ["Leones", "Tigres", "Piratas", "Olmecas"], ans: 0 },
-  { q: "¿Qué equipo de la LMB tiene como sede la ciudad de Tijuana?", opts: ["Toros", "Calafias", "Bravos", "Dorados"], ans: 0 },
-  { q: "¿Cómo se llama el legendario bateador con récord de más jonrones de por vida en la LMB?", opts: ["Nelson Barrera", "Hector Espino", "Alejandro Ortiz", "Andrés Mora"], ans: 0 },
-  { q: "¿Quién es considerado el más grande bateador mexicano de todos los tiempos ('El Bambino Mexicano')?", opts: ["Héctor Espino", "Vinny Castilla", "Adrian González", "Beto Ávila"], ans: 0 },
-  { q: "¿Qué lanzador mexicano brilló en MLB con los Dodgers y surgió de la LMB en Leones de Yucatán?", opts: ["Fernando Valenzuela", "Joakim Soria", "Julio Urías", "Yovani Gallardo"], ans: 0 },
-  { q: "¿Cuál es el equipo de Aguascalientes?", opts: ["Rieleros", "Acereros", "Generales", "Tecolotes"], ans: 0 },
-  { q: "¿Qué equipo divide su sede entre México y Texas (Dos Laredos)?", opts: ["Tecolotes de los Dos Laredos", "Toros de Tijuana", "Bravos de León", "Charros de Jalisco"], ans: 0 },
-  { q: "¿Cómo se llama el estadio de los Leones de Yucatán?", opts: ["Kukulcán Alamo", "Resurgimiento", "Beto Ávila", "Hermanos Serdán"], ans: 0 },
-  { q: "¿En qué estado juegan los Acereros?", opts: ["Coahuila", "Nuevo León", "Tamaulipas", "Sonora"], ans: 0 },
-  { q: "¿Qué equipo viste tradicionalmente de verde y blanco en Puebla?", opts: ["Pericos", "Piratas", "El Águila", "Guerreros"], ans: 0 },
-  { q: "¿Cómo se llama el histórico estadio de Veracruz?", opts: ["Beto Ávila", "Nelson Barrera", "Eduardo Vasconcelos", "Domingo Santana"], ans: 0 },
-  { q: "¿Qué equipo juega en Oaxaca?", opts: ["Guerreros", "Olmecas", "Piratas", "Pericos"], ans: 0 },
-  { q: "¿Cuál de estos equipos regresó a la LMB en Jalisco?", opts: ["Charros de Jalisco", "Mariachis de Jalisco", "Tequileros", "Tigres"], ans: 0 },
-  { q: "¿Cómo se llama el equipo que representa a Campeche?", opts: ["Piratas", "Marineros", "Corsarios", "Delfines"], ans: 0 },
-  { q: "¿Qué lanzador lanzó un juego perfecto en la LMB en 1953?", opts: ["Lauro Monteverde", "Ramiro Cuevas", "Vicente Romo", "Ramón Arano"], ans: 1 },
-  { q: "¿Cuál de estas divisiones conforma el formato de competencia de la LMB?", opts: ["Zona Norte y Zona Sur", "Zona Este y Zona Oeste", "Liga Central y Pacífica", "Grupo A y Grupo B"], ans: 0 },
-  { q: "¿Qué equipo tiene como mascota al 'Chacho'?", opts: ["Tigres de Quintana Roo", "Diablos Rojos", "Sultanes", "Toros"], ans: 0 },
-  { q: "¿Qué legendario estadio en CDMX albergó béisbol por décadas antes de convertirse en centro comercial?", opts: ["Parque Delta", "Foro Sol", "Estadio Azul", "Parque España"], ans: 0 },
-  { q: "¿Cómo se llama el manager con más victorias históricas en la LMB?", opts: ["Paquín Estrada", "Benjamin 'Cananea' Reyes", "Guillermo Garibay", "Raúl Cano"], ans: 1 },
-  { q: "¿En qué mes inicia habitualmente la temporada regular de la LMB?", opts: ["Abril", "Enero", "Junio", "Octubre"], ans: 0 },
-  { q: "¿Qué equipo tiene la mascota 'Sultanito'?", opts: ["Sultanes de Monterrey", "Rieleros", "Saraperos", "Acereros"], ans: 0 },
-  { q: "¿Quién fue el primer mexicano en ganar un título de bateo en Grandes Ligas, procedente de LMB?", opts: ["Beto Ávila", "Vinny Castilla", "Jorge Orta", "Aureliano Rodríguez"], ans: 0 },
-  { q: "¿Qué equipo juega en la ciudad de León, Guanajuato?", opts: ["Bravos de León", "Abejas", "Tigres", "Panteras"], ans: 0 },
-  { q: "¿Cómo se llama la emblemática mascota de los Diablos Rojos?", opts: ["Rocco", "Lorenzo", "Rayo", "Toro"], ans: 0 },
-  { q: "¿Qué histórico equipo veracruzano es conocido como 'El Glorioso'?", opts: ["El Águila de Veracruz", "Cafeteros de Córdoba", "Rojos del Águila", "Tiburones"], ans: 0 },
-  { q: "¿Cuántos strikes necesita un pitcher para lograr un ponche?", opts: ["3", "4", "2", "5"], ans: 0 },
-  { q: "¿Cuántos outs se necesitan para completar una entrada completa (ambos equipos)?", opts: ["6 outs", "3 outs", "4 outs", "8 outs"], ans: 0 }
+  {
+    q: "¿En qué año se fundó la franquicia de Acereros de Monclova?",
+    opts: ["1970", "1974", "1975", "1940"],
+    ans: 1
+  },
+  {
+    q: "¿En qué ciudad y estado tiene su sede Acereros de Monclova?",
+    opts: ["Torreón, Coahuila", "Saltillo, Coahuila", "Monclova, Coahuila", "Durango, Durango"],
+    ans: 2
+  },
+  {
+    q: "¿A qué zona de la Liga Mexicana de Béisbol pertenece Acereros de Monclova?",
+    opts: ["Zona Norte", "Zona Sur", "Zona Centro", "Zona Pacífico"],
+    ans: 0
+  },
+  {
+    q: "¿Cuál de las siguientes franquicias coahuilenses se fundó en la década de los 70?",
+    opts: ["Algodoneros de Unión Laguna", "Acereros de Monclova", "Tecolotes de los Dos Laredos", "Dorados de Chihuahua"],
+    ans: 1
+  },
+  {
+    q: "Según el registro de la LMB, ¿qué equipo de Monclova se fundó exactamente un año antes que Rieleros de Aguascalientes (1975)?",
+    opts: ["Saraperos de Saltillo", "Charros de Jalisco", "Acereros de Monclova", "Toros de Tijuana"],
+    ans: 2
+  },
+  {
+    q: "¿En qué año fue fundado el equipo Algodoneros de Unión Laguna?",
+    opts: ["1940", "1936", "1949", "1970"],
+    ans: 0
+  },
+  {
+    q: "¿En qué ciudad de Coahuila juegan los Algodoneros de Unión Laguna?",
+    opts: ["Monclova", "Saltillo", "Torreón", "Piedras Negras"],
+    ans: 2
+  },
+  {
+    q: "¿Qué dos equipos de la Zona Norte compartieron exactamente el mismo año de fundación (1940)?",
+    opts: [
+      "Algodoneros de Unión Laguna y Tecolotes de los Dos Laredos",
+      "Sultanes de Monterrey y Charros de Jalisco",
+      "Dorados de Chihuahua y Saraperos de Saltillo",
+      "Acereros de Monclova y Rieleros de Aguascalientes"
+    ],
+    ans: 0
+  },
+  {
+    q: "¿A qué circuito pertenece la franquicia de Algodoneros de Unión Laguna?",
+    opts: ["Zona Sur de la LMB", "Zona Norte de la LMB", "Liga Invernal Mexicana", "Liga del Pacífico"],
+    ans: 1
+  },
+  {
+    q: "¿Qué equipo de Coahuila en la Zona Norte fue fundado primero?",
+    opts: ["Saraperos de Saltillo (1970)", "Acereros de Monclova (1974)", "Algodoneros de Unión Laguna (1940)", "Toros de Tijuana (2004)"],
+    ans: 2
+  },
+  {
+    q: "¿En qué año se fundó la franquicia Caliente de Durango?",
+    opts: ["2004", "2024", "1975", "1949"],
+    ans: 1
+  },
+  {
+    q: "¿En qué ciudad y estado juega Caliente de Durango?",
+    opts: ["Durango, Durango", "Zapopan, Jalisco", "Chihuahua, Chihuahua", "Tijuana, Baja California"],
+    ans: 0
+  },
+  {
+    q: "¿Cuál es el equipo de más reciente fundación (2024) entre los 10 de la Zona Norte?",
+    opts: ["Toros de Tijuana", "Caliente de Durango", "Rieleros de Aguascalientes", "Dorados de Chihuahua"],
+    ans: 1
+  },
+  {
+    q: "¿En qué década fue fundada la franquicia Caliente de Durango en la LMB?",
+    opts: ["Década de 2000", "Década de 2010", "Década de 2020", "Década de 1990"],
+    ans: 2
+  },
+  {
+    q: "¿Qué equipo representa al estado de Durango en la Zona Norte de la LMB según la tabla?",
+    opts: ["Generales de Durango", "Alacranes de Durango", "Caliente de Durango", "Mineros de Durango"],
+    ans: 2
+  },
+  {
+    q: "¿En qué año se fundó el equipo Charros de Jalisco dentro de la lista de la Zona Norte?",
+    opts: ["1949", "1939", "1970", "1975"],
+    ans: 0
+  },
+  {
+    q: "¿En qué municipio y estado de México tiene su sede el equipo Charros de Jalisco?",
+    opts: ["Guadalajara, Jalisco", "Zapopan, Jalisco", "Tlaquepaque, Jalisco", "Tlajomulco, Jalisco"],
+    ans: 1
+  },
+  {
+    q: "¿Cuál de las siguientes franquicias se fundó exactamente 10 años después que Sultanes de Monterrey (1939)?",
+    opts: ["Algodoneros de Unión Laguna", "Tecolotes de los Dos Laredos", "Charros de Jalisco", "Dorados de Chihuahua"],
+    ans: 2
+  },
+  {
+    q: "¿En qué división de la Liga Mexicana de Béisbol se ubica Charros de Jalisco?",
+    opts: ["Zona Sur", "Zona Norte", "Zona Centro", "Zona Occidente"],
+    ans: 1
+  },
+  {
+    q: "¿Qué equipo de la Zona Norte representa al estado de Jalisco según la tabla de la LMB?",
+    opts: ["Mariachis de Guadalajara", "Charros de Jalisco", "Tequileros de Jalisco", "Rieleros de Jalisco"],
+    ans: 1
+  },
+  {
+    q: "¿En qué año fue fundado el equipo Dorados de Chihuahua?",
+    opts: ["1936", "1939", "1940", "1974"],
+    ans: 0
+  },
+  {
+    q: "¿En qué ciudad tiene su sede el equipo Dorados de Chihuahua?",
+    opts: ["Ciudad Juárez, Chihuahua", "Chihuahua, Chihuahua", "Delicias, Chihuahua", "Parral, Chihuahua"],
+    ans: 1
+  },
+  {
+    q: "Entre los equipos de la Zona Norte listados, ¿cuál es el más antiguo por año de fundación?",
+    opts: ["Sultanes de Monterrey (1939)", "Dorados de Chihuahua (1936)", "Algodoneros de Unión Laguna (1940)", "Charros de Jalisco (1949)"],
+    ans: 1
+  },
+  {
+    q: "¿A qué zona de la LMB pertenece la escuadra de Dorados de Chihuahua?",
+    opts: ["Zona Norte", "Zona Sur", "Zona Fronteriza", "Zona Centro"],
+    ans: 0
+  },
+  {
+    q: "¿En qué década de los años 1900 nació la franquicia de Dorados de Chihuahua?",
+    opts: ["Década de 1920", "Década de 1930", "Década de 1940", "Década de 1970"],
+    ans: 1
+  },
+  {
+    q: "¿En qué año se fundó el equipo Rieleros de Aguascalientes?",
+    opts: ["1970", "1974", "1975", "2004"],
+    ans: 2
+  },
+  {
+    q: "¿En qué ciudad y estado juega Rieleros de Aguascalientes?",
+    opts: ["Aguascalientes, Aguascalientes", "Saltillo, Coahuila", "Monclova, Coahuila", "Zapopan, Jalisco"],
+    ans: 0
+  },
+  {
+    q: "¿Qué equipo coahuilense se fundó exactamente 5 años antes que Rieleros de Aguascalientes (1975)?",
+    opts: ["Acereros de Monclova", "Saraperos de Saltillo", "Algodoneros de Unión Laguna", "Tecolotes de los Dos Laredos"],
+    ans: 1
+  },
+  {
+    q: "¿En qué zona de la Liga Mexicana de Béisbol se sitúa Rieleros de Aguascalientes?",
+    opts: ["Zona Sur", "Zona Norte", "Zona Bajío", "Zona Centro"],
+    ans: 1
+  },
+  {
+    q: "¿En qué década fue fundada la franquicia de Rieleros de Aguascalientes?",
+    opts: ["Década de 1960", "Década de 1970", "Década de 1940", "Década de 1980"],
+    ans: 1
+  },
+  {
+    q: "¿En qué año fue fundado el equipo Saraperos de Saltillo?",
+    opts: ["1970", "1974", "1975", "1939"],
+    ans: 0
+  },
+  {
+    q: "¿En qué ciudad de Coahuila juega el equipo Saraperos?",
+    opts: ["Monclova", "Torreón", "Saltillo", "Piedras Negras"],
+    ans: 2
+  },
+  {
+    q: "¿Cuál de estos tres equipos del estado de Coahuila es el segundo más antiguo según la tabla (1970)?",
+    opts: ["Acereros de Monclova", "Algodoneros de Unión Laguna", "Saraperos de Saltillo", "Tecolotes de los Dos Laredos"],
+    ans: 2
+  },
+  {
+    q: "¿En qué división de la LMB compite Saraperos de Saltillo?",
+    opts: ["Zona Norte", "Zona Sur", "Zona Noreste", "Zona del Golfo"],
+    ans: 0
+  },
+  {
+    q: "¿Cuántos años separan la fundación de Saraperos de Saltillo (1970) de la de Acereros de Monclova (1974)?",
+    opts: ["2 años", "4 años", "5 años", "10 años"],
+    ans: 1
+  },
+  {
+    q: "¿En qué año se fundó el club Sultanes de Monterrey?",
+    opts: ["1936", "1939", "1940", "1949"],
+    ans: 1
+  },
+  {
+    q: "¿En qué ciudad y estado tiene su sede el equipo Sultanes de Monterrey?",
+    opts: ["Monterrey, Nuevo León", "Saltillo, Coahuila", "Nuevo Laredo, Tamaulipas", "Durango, Durango"],
+    ans: 0
+  },
+  {
+    q: "¿Cuál fue el segundo equipo más antiguo en fundarse dentro de la lista de la Zona Norte?",
+    opts: ["Dorados de Chihuahua (1936)", "Sultanes de Monterrey (1939)", "Algodoneros de Unión Laguna (1940)", "Tecolotes de los Dos Laredos (1940)"],
+    ans: 1
+  },
+  {
+    q: "¿A qué circuito pertenece la novena de Sultanes de Monterrey?",
+    opts: ["Zona Norte de la LMB", "Zona Sur de la LMB", "Liga de Béisbol del Bajío", "Zona Centro"],
+    ans: 0
+  },
+  {
+    q: "¿Qué equipo de Nuevo León aparece en la tabla de la Zona Norte 2024?",
+    opts: ["Sultanes de Monterrey", "Broncos de Reynosa", "Tecolotes de los Dos Laredos", "Dorados de Chihuahua"],
+    ans: 0
+  },
+  {
+    q: "¿En qué año se fundó la franquicia Tecolotes de los Dos Laredos?",
+    opts: ["1939", "1940", "1949", "1970"],
+    ans: 1
+  },
+  {
+    q: "¿Qué particularidad geográfica tienen las sedes de Tecolotes de los Dos Laredos?",
+    opts: [
+      "Tienen sedes en Monterrey, Nuevo León y Saltillo, Coahuila",
+      "Tienen sedes binacionales en Nuevo Laredo, Tamaulipas y Laredo, Texas",
+      "Tienen sedes en Torreón, Coahuila y Durango, Durango",
+      "Tienen sedes en Tijuana, Baja California y Chihuahua, Chihuahua"
+    ],
+    ans: 1
+  },
+  {
+    q: "¿Qué equipo comparte el mismo año de fundación (1940) con Tecolotes de los Dos Laredos?",
+    opts: ["Algodoneros de Unión Laguna", "Sultanes de Monterrey", "Charros de Jalisco", "Dorados de Chihuahua"],
+    ans: 0
+  },
+  {
+    q: "¿A qué zona de la Liga Mexicana de Béisbol pertenecen los Tecolotes de los Dos Laredos?",
+    opts: ["Zona Sur", "Zona Norte", "Zona Transfronteriza", "Zona Texana"],
+    ans: 1
+  },
+  {
+    q: "¿Qué franquicia de la Zona Norte representa a una ciudad mexicana en Tamaulipas y a una estadounidense en Texas?",
+    opts: ["Toros de Tijuana", "Tecolotes de los Dos Laredos", "Acereros de Monclova", "Dorados de Chihuahua"],
+    ans: 1
+  },
+  {
+    q: "¿En qué año fue fundada la franquicia Toros de Tijuana?",
+    opts: ["1975", "2004", "2024", "1949"],
+    ans: 1
+  },
+  {
+    q: "¿En qué ciudad y estado juega Toros de Tijuana?",
+    opts: ["Tijuana, Baja California", "Mexicali, Baja California", "Ensenada, Baja California", "Laredo, Texas"],
+    ans: 0
+  },
+  {
+    q: "¿Cuál fue el segundo equipo más reciente en fundarse (año 2004) de la lista de la Zona Norte?",
+    opts: ["Caliente de Durango (2024)", "Toros de Tijuana (2004)", "Rieleros de Aguascalientes (1975)", "Acereros de Monclova (1974)"],
+    ans: 1
+  },
+  {
+    q: "¿En qué zona de la LMB compite la escuadra de Toros de Tijuana?",
+    opts: ["Zona Norte", "Zona Sur", "Zona Noroeste", "Zona Peninsular"],
+    ans: 0
+  },
+  {
+    q: "¿Qué equipo representa al estado de Baja California en la lista de la Zona Norte de la LMB?",
+    opts: ["Tecolotes de los Dos Laredos", "Toros de Tijuana", "Dorados de Chihuahua", "Caliente de Durango"],
+    ans: 1
+  }
 ];
 
 // 2. Colección de estampas regulares con la ruta relativa exacta a dos niveles arriba
@@ -50,15 +269,16 @@ const regularStamps = [
   { id: 4, name: "Junior Lake #2", img: "../../Assets/Images/estampas/JuniorLake.png" },
   { id: 5, name: "Manny García #25", img: "../../Assets/Images/estampas/MannyGarcia.png" },
   { id: 6, name: "Ramiro Peña #19", img: "../../Assets/Images/estampas/RamiroPena.png" },
-  { id: 7, name: "Robinson Canó #22", img: "../../Assets/Images/estampas/RobinsonCano.png" },
+  { id: 7, name: "Brayan Lozano #78", img: "../../Assets/Images/estampas/BrayanLozano.png" },
   { id: 8, name: "Wilfredo Tovar #7", img: "../../Assets/Images/estampas/WilfredoTovar.png" },
-  { id: 9, name: "Jonathan Villar #6", img: "../../Assets/Images/estampas/JonathanVillar.png" }
+  { id: 9, name: "Derek West #7", img: "../../Assets/Images/estampas/DerekWest.png" },
+  { id: 10, name: "Jonathan Villar #6", img: "../../Assets/Images/estampas/JonathanVillar.png" }
 ];
 
 // 3. Estampa Suprema desbloqueable al completar la colección base
 const masterStamp = { 
   id: 100, 
-  name: "🏆 Copa Zaachila - Leyenda LMB", 
+  name: "Copa Zaachila - Leyenda LMB", 
   img: "../../Assets/Images/estampas/estampa_suprema.png" 
 };
 
