@@ -261,7 +261,6 @@ const questionBank = [
   }
 ];
 
-// 2. Colección de estampas regulares con la ruta relativa exacta a dos niveles arriba
 const regularStamps = [
   { id: 1, name: "Kennys Vargas #19", img: "../../Assets/Images/estampas/KennysVargas.png" },
   { id: 2, name: "Chris Carter #23", img: "../../Assets/Images/estampas/ChrisCarter.png" },
@@ -275,7 +274,6 @@ const regularStamps = [
   { id: 10, name: "Jonathan Villar #6", img: "../../Assets/Images/estampas/JonathanVillar.png" }
 ];
 
-// 3. Estampa Suprema desbloqueable al completar la colección base
 const masterStamp = { 
   id: 100, 
   name: "Copa Zaachila - Leyenda LMB", 
@@ -360,10 +358,42 @@ document.getElementById('triviaForm').addEventListener('submit', async (e) => {
     if (userAnswers[idx] === q.ans) score++;
   });
 
+  const rewardModal = document.getElementById('rewardModal');
+  const rewardScoreText = document.getElementById('rewardScoreText');
+  const rewardSubtitle = document.getElementById('rewardSubtitle');
+  const stampWrapper = document.getElementById('stampWrapper');
+  const modalBadge = document.querySelector('.reward-badge');
+  const btnPerfil = document.getElementById('btnPerfil');
+
+  rewardScoreText.innerText = `Obtuviste ${score} de 5 aciertos`;
+
+  // SI NO OBTUVO 5/5 ACIERTOS
+  if (score < 5) {
+    if (modalBadge) {
+      modalBadge.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Trivia No Completada';
+      modalBadge.style.color = '#dc2626';
+    }
+    rewardSubtitle.innerText = 'Necesitas contestar correctamente las 5 preguntas para ganar una estampa.';
+    if (stampWrapper) stampWrapper.style.display = 'none';
+    if (btnPerfil) btnPerfil.style.display = 'none';
+
+    rewardModal.classList.add('active');
+    return;
+  }
+
+  // SI OBTUVO PERFECT SCORE (5/5 ACIERTOS)
+  if (modalBadge) {
+    modalBadge.innerHTML = '<i class="fa-solid fa-award"></i> ¡Trivia Perfecta!';
+    modalBadge.style.color = '#d97706';
+  }
+  rewardSubtitle.innerText = '¡Felicidades! Has ganado una nueva estampa para tu álbum.';
+  if (stampWrapper) stampWrapper.style.display = 'flex';
+  if (btnPerfil) btnPerfil.style.display = 'inline-flex';
+
   const idUsuario = localStorage.getItem('id_usuario') || 1;
   let earnedStamp = null;
 
-  // 1. Intento de persistencia mediante API Backend (MySQL)
+  // 1. Intento de persistencia mediante API Backend
   try {
     const response = await fetch('/api/estampas/desbloquear-estampa', {
       method: 'POST',
@@ -401,15 +431,13 @@ document.getElementById('triviaForm').addEventListener('submit', async (e) => {
     localStorage.setItem('myStamps', JSON.stringify(savedStamps));
   }
 
-  // 3. Renderizado de la estampa en el modal de recompensa
-  document.getElementById('rewardScoreText').innerText = `Obtuviste ${score} de 5 aciertos`;
+  // 3. Renderizado de la estampa en el modal
   document.getElementById('stampName').innerText = earnedStamp.nombre || earnedStamp.name;
 
   const stampImg = document.getElementById('stampImg');
   const stampFallback = document.getElementById('stampFallback');
 
-  // Mostramos el modal primero para garantizar dimensiones en el DOM
-  document.getElementById('rewardModal').classList.add('active');
+  rewardModal.classList.add('active');
 
   if (stampImg) {
     stampImg.style.display = 'block';

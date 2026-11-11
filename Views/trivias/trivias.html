@@ -43,9 +43,9 @@
         <div class="reward-card">
           <div class="reward-badge"><i class="fa-solid fa-award"></i> ¡Trivia Completada!</div>
           <h2 class="reward-title" id="rewardScoreText">Obtuviste 5/5 aciertos</h2>
-          <p class="reward-subtitle">¡Has ganado una nueva estampa para tu álbum!</p>
+          <p class="reward-subtitle" id="rewardSubtitle">¡Has ganado una nueva estampa para tu álbum!</p>
           
-          <div class="stamp-wrapper">
+          <div class="stamp-wrapper" id="stampWrapper">
             <div class="stamp-frame">
               <img 
                 src="" 
@@ -61,7 +61,7 @@
           </div>
 
           <div class="modal-actions">
-            <button type="button" class="btn-card btn-confirm" onclick="window.location.href='../perfil/perfil.html';">Ver en mi Perfil</button>
+            <button type="button" class="btn-card btn-confirm" id="btnPerfil" onclick="window.location.href='../perfil/perfil.html';">Ver en mi Perfil</button>
             <button type="button" class="btn-card btn-cancel" onclick="location.reload();">Jugar Otra Vez</button>
           </div>
         </div>
